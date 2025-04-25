@@ -1,0 +1,62 @@
+/* filepath: c:\Users\Usuario\Desktop\Meu-portifolio\assets\css\styles.css */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f7f5;
+  color: #1e1e1e;
+}
+#formacao .overflow-x-auto {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+}
+
+#formacao .overflow-x-auto::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem */
+}
+
+#formacao .min-width-300px {
+  flex: 0 0 auto;
+  min-width: 300px;
+}
+
+#formacao .max-width-300px {
+  max-width: 300px;
+}
+
+#formacao-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding: 1rem 2rem; /* Adiciona espaço para os botões */
+}
+
+#formacao-container::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem */
+}
+
+#scroll-left,
+#scroll-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+a img[alt="GitHub"] {
+  filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+a img[alt="LinkedIn"] {
+  filter: invert(29%) sepia(85%) saturate(749%) hue-rotate(180deg) brightness(91%) contrast(90%);
+}
+
+a img[alt="Instagram"] {
+  filter: invert(48%) sepia(22%) saturate(749%) hue-rotate(320deg) brightness(91%) contrast(85%);
+}
+
+/* Adicione outros estilos personalizados aqui */

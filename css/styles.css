@@ -1,9 +1,12 @@
-/* filepath: c:\Users\Usuario\Desktop\Meu-portifolio\assets\css\styles.css */
+@import tailwindcss;
+
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f9f7f5;
+  background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
   color: #1e1e1e;
 }
+
+
 #formacao .overflow-x-auto {
   display: flex;
   overflow-x: auto;

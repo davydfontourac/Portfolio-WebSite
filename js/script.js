@@ -48,12 +48,6 @@ if (title && subtitle) {
     subtitle.classList.add('opacity-100', 'translate-y-0');
   }, 400);
 }
-if (title && subtitle && nav) {
-  setTimeout(() => {
-    nav.classList.remove('opacity-0');
-    nav.classList.add('opacity-100');
-  }, 1600); // tempo suficiente para o título e subtítulo aparecerem
-}
 
 // Animação e funcionalidade dos indicadores de rolagem
 document.addEventListener('DOMContentLoaded', () => {
@@ -203,3 +197,165 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// Animação de scroll suave para o botão de rolagem
+document.addEventListener('DOMContentLoaded', function () {
+  const scrollBtn = document.getElementById('scroll-down-btn');
+    if (scrollBtn) {
+      scrollBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector('#sobre');
+        if (target) {
+          window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - 20,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+});
+document.addEventListener('DOMContentLoaded', function () {
+  function drawStars() {
+    const canvas = document.getElementById('stars-bg');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    canvas.width = w;
+    canvas.height = h;
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < 120; i++) {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const r = Math.random() * 1.2 + 0.2;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = 'rgba(255,255,255,' + (Math.random() * 0.7 + 0.2) + ')';
+      ctx.fill();
+    }
+  }
+  // Só desenha se estiver no dark
+  function handleBg() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const bg = document.getElementById('dark-bg-animated');
+    if (bg) bg.style.opacity = isDark ? '1' : '0';
+    if (isDark) drawStars();
+  }
+  window.addEventListener('resize', () => {
+    if (document.documentElement.classList.contains('dark')) drawStars();
+  });
+  // Detecta troca de tema
+  const darkBtn = document.getElementById('toggle-dark');
+  if (darkBtn) {
+    darkBtn.addEventListener('click', () => {
+      setTimeout(handleBg, 10);
+    });
+  }
+  // Inicializa
+  handleBg();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      nav.classList.add('nav-visible');
+    } else {
+      nav.classList.remove('nav-visible');
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hiThere = document.getElementById('intro-greeting');
+  const intro = document.getElementById('intro-name');
+  const mainTitleBlock = document.getElementById('main-title-block');
+  const nav = document.getElementById('main-nav');
+
+  // Novos textos
+  const hiThereText = "Olá! Prazer em te ver por aqui";
+  const introText = "Me chamo Davyd, como posso ajudar?";
+
+  // Esconde todos inicialmente
+  hiThere.innerHTML = "";
+  intro.innerHTML = "";
+  mainTitleBlock.style.opacity = 0;
+  if (nav) nav.classList.add('opacity-0');
+
+  // Cria o cursor piscando
+  function getCursorHTML() {
+    return '<span class="type-cursor" style="display:inline-block;width:1ch;animation:blink 1s steps(1) infinite;">|</span>';
+  }
+
+  // Efeito de máquina de escrever com fade-in em cada letra
+  function typeEffect(element, text, delay = 65, callback) {
+    element.innerHTML = "";
+    let i = 0;
+    function type() {
+      if (i <= text.length) {
+        // Cria um span para cada letra para animar o fade-in
+        let html = "";
+        for (let j = 0; j < i; j++) {
+          html += `<span style="opacity:1;transition:opacity 0.2s">${text[j]}</span>`;
+        }
+        // Letra atual (fade-in)
+        if (i < text.length) {
+          html += `<span style="opacity:0;transition:opacity 0.2s">${text[i]}</span>`;
+        }
+        element.innerHTML = html + getCursorHTML();
+        // Faz a letra atual aparecer suavemente
+        if (i < text.length) {
+          setTimeout(() => {
+            const spans = element.querySelectorAll('span');
+            if (spans[i]) spans[i].style.opacity = 1;
+          }, 10);
+        }
+        i++;
+        setTimeout(type, delay);
+      } else {
+        // Remove cursor após um tempo
+        setTimeout(() => {
+          element.innerHTML = text;
+          if (callback) setTimeout(callback, 400);
+        }, 600);
+      }
+    }
+    type();
+  }
+
+  // Inicia animação
+  setTimeout(() => {
+    hiThere.style.opacity = 1;
+    hiThere.style.transform = 'translateY(0)';
+    typeEffect(hiThere, hiThereText, 65, () => {
+      setTimeout(() => {
+        hiThere.style.opacity = 0;
+        intro.style.opacity = 1;
+        intro.style.transform = 'translateY(0)';
+        typeEffect(intro, introText, 65, () => {
+          setTimeout(() => {
+            intro.style.opacity = 0;
+            mainTitleBlock.style.opacity = 1;
+            // Só mostra o nav depois de tudo
+            if (nav) {
+              nav.classList.remove('opacity-0');
+              nav.classList.add('opacity-100');
+            }
+          }, 900);
+        });
+      }, 600);
+    });
+  }, 400);
+});
+
+// Adicione o CSS do cursor piscando (no JS para garantir que funcione)
+(function() {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .type-cursor { font-weight: bold; color: inherit; }
+  `;
+  document.head.appendChild(style);
+})();

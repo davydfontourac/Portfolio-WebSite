@@ -359,3 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.head.appendChild(style);
 })();
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};

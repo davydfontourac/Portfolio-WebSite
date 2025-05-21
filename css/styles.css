@@ -74,6 +74,22 @@ body {
   cursor: pointer;
 }
 
+#skills-container::-webkit-scrollbar {
+  display: none;
+}
+#skills-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.skills-scroll::-webkit-scrollbar {
+  display: none;
+}
+.skills-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 a img[alt="GitHub"] {
   filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }
@@ -93,11 +109,21 @@ a img[alt="Instagram"] {
 }
 
 #main-nav.nav-visible {
-  background: rgba(40, 40, 50, 0.7) !important; /* Mais translúcido */
+  background: rgba(40, 40, 50, 0.7) !important;
   box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
   transition: background 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.3s, backdrop-filter 0.4s;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+/* Garante que as imagens dos cards de projeto fiquem centralizadas, sem distorção e preencham o espaço */
+.projeto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem; /* igual ao rounded-lg do Tailwind */
+  background: #222; /* fallback para fundo escuro */
 }
 
 @media (max-width: 400px) {
@@ -112,4 +138,5 @@ a img[alt="Instagram"] {
     padding-top: 1.2rem !important;
     padding-bottom: 1.2rem !important;
   }
+  
 }

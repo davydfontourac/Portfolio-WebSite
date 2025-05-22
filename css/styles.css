@@ -90,6 +90,15 @@ body {
   scrollbar-width: none;
 }
 
+/* Esconde a scrollbar horizontal em todos os containers de skills, formação, etc */
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE e Edge */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Opera */
+}
+
 a img[alt="GitHub"] {
   filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }

@@ -7,7 +7,7 @@ if (navToggle && navMobile) {
     navMobile.classList.toggle('hidden');
   });
   // Fecha o menu mobile ao clicar em um link
-  navMobile.querySelectorAll('a').forEach(link => {
+  navMobile.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navMobile.classList.add('hidden');
     });
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (img) {
     const observer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             img.classList.remove('opacity-0', 'translate-y-8');
             img.classList.add('opacity-100', 'translate-y-0');
@@ -83,17 +83,20 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const skillBars = document.querySelectorAll('.skill-bar');
   if (skillBars.length) {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          const percent = bar.getAttribute('data-skill');
-          bar.style.width = percent + '%';
-          observer.unobserve(bar);
-        }
-      });
-    }, { threshold: 0.5 });
-    skillBars.forEach(bar => observer.observe(bar));
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            const percent = bar.getAttribute('data-skill');
+            bar.style.width = percent + '%';
+            observer.unobserve(bar);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    skillBars.forEach((bar) => observer.observe(bar));
   }
 });
 
@@ -106,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalDesc = document.getElementById('skill-modal-desc');
   const closeModal = document.getElementById('close-skill-modal');
 
-  document.querySelectorAll('.skill-card').forEach(card => {
+  document.querySelectorAll('.skill-card').forEach((card) => {
     card.addEventListener('click', () => {
       modalTitle.textContent = card.getAttribute('data-title');
       modalDesc.textContent = card.getAttribute('data-desc');
@@ -129,24 +132,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // Animação de surgir nas seções ao rolar
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0', 'translate-y-8');
-        entry.target.classList.add('opacity-100', 'translate-y-0');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-  sections.forEach(section => {
+  sections.forEach((section) => {
     observer.observe(section);
   });
 });
 
 // Smooth scroll para todos os links do nav que começam com #
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId.length > 1 && document.querySelector(targetId)) {
@@ -154,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const target = document.querySelector(targetId);
         window.scrollTo({
           top: target.getBoundingClientRect().top + window.scrollY - 20,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       }
     });
@@ -188,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form && feedback) {
     form.addEventListener('submit', function (e) {
       setTimeout(() => {
-        feedback.textContent = "Mensagem enviada com sucesso!";
+        feedback.textContent = 'Mensagem enviada com sucesso!';
         feedback.classList.remove('hidden');
         feedback.classList.remove('text-red-600');
         feedback.classList.add('text-green-600');
@@ -200,14 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Animação de scroll suave para o botão de rolagem
 document.addEventListener('DOMContentLoaded', function () {
   const scrollBtn = document.getElementById('scroll-down-btn');
-    if (scrollBtn) {
-      scrollBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector('#sobre');
-        if (target) {
-          window.scrollTo({
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector('#sobre');
+      if (target) {
+        window.scrollTo({
           top: target.getBoundingClientRect().top + window.scrollY - 20,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       }
     });
@@ -272,12 +278,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('main-nav');
 
   // Novos textos
-  const hiThereText = "Olá! Prazer em te ver por aqui";
-  const introText = "Me chamo Davyd, como posso ajudar?";
+  const hiThereText = 'Olá! Prazer em te ver por aqui';
+  const introText = 'Me chamo Davyd, como posso ajudar?';
 
   // Esconde todos inicialmente
-  hiThere.innerHTML = "";
-  intro.innerHTML = "";
+  hiThere.innerHTML = '';
+  intro.innerHTML = '';
   mainTitleBlock.style.opacity = 0;
   if (nav) nav.classList.add('opacity-0');
 
@@ -288,12 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Efeito de máquina de escrever com fade-in em cada letra
   function typeEffect(element, text, delay = 65, callback) {
-    element.innerHTML = "";
+    element.innerHTML = '';
     let i = 0;
     function type() {
       if (i <= text.length) {
         // Cria um span para cada letra para animar o fade-in
-        let html = "";
+        let html = '';
         for (let j = 0; j < i; j++) {
           html += `<span style="opacity:1;transition:opacity 0.2s">${text[j]}</span>`;
         }
@@ -348,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Adicione o CSS do cursor piscando (no JS para garantir que funcione)
-(function() {
+(function () {
   const style = document.createElement('style');
   style.innerHTML = `
     @keyframes blink {
@@ -363,3 +369,15 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+// Troca para modo claro após mostrar "Front-end"
+document.addEventListener('DOMContentLoaded', () => {
+  const mainTitleBlock = document.getElementById('main-title-block');
+  setTimeout(() => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      const bg = document.getElementById('dark-bg-animated');
+      if (bg) bg.style.opacity = '0';
+    }
+  }, 9400); // ajuste esse valor se sua animação for mais longa ou curta
+});

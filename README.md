@@ -4,7 +4,7 @@ Este é o meu website portfólio, desenvolvido com HTML, Tailwind CSS e JavaScri
 
 <p align="center">
   <a href="https://davydportfoliowebsite.vercel.app/" target="_blank">
-    <img src="images/mocup-desktop-mobile.gif" alt="Demonstração do Portfólio" width="500"/>
+    <img src="/images/mocup-desktop-mobile.svg/" alt="Demonstração do Portfólio" width="500"/>
   </a>
 </p>
   <div> align="center">

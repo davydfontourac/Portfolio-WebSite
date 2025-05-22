@@ -13,11 +13,7 @@ Este é o meu website portfólio, desenvolvido com HTML, Tailwind CSS e JavaScri
     <img src="/images/mocup-desktop-mobile.svg/" alt="Demonstração do Portfólio" width="900"/>
   </a>
 </p>
-  <div align="center">
-    <strong style="font-size:2em; color:#2563eb; background:#e0e7ff; padding:0.5em 1em; border-radius:8px; display:inline-block;">
-        CLIQUE PARA VISUALIZAR!
-    </strong>
-</div>
+
 
 
 

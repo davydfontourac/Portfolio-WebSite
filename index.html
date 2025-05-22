@@ -1,18 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfólio de Davyd Fontoura, Front-end Developer em formação.">
-    <meta name="keywords" content="Portfólio, Front-end, Desenvolvedor, HTML, CSS, JavaScript">
-    <meta name="author" content="Davyd Fontoura">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <meta
+      name="description"
+      content="Portfólio de Davyd Fontoura, Front-end Developer em formação."
+    />
+    <meta name="keywords" content="Portfólio, Front-end, Desenvolvedor, HTML, CSS, JavaScript" />
+    <meta name="author" content="Davyd Fontoura" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Davyd Fontoura | Portfólio</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,409 +27,889 @@
           extend: {
             colors: {
               primary: '#1e1e1e',
-              secondary: '#f9f7f5'
+              secondary: '#f9f7f5',
             },
             fontFamily: {
-              sans: ['Open Sans','Inter', 'sans-serif'],
-              mont: ['Montserrat', 'sans-serif']
-            }
-          }
-        }
-      } 
+              sans: ['Open Sans', 'Inter', 'sans-serif'],
+              mont: ['Montserrat', 'sans-serif'],
+            },
+          },
+        },
+      };
     </script>
   </head>
-  <body class="relative z-10 font-sans bg-secondary text-primary dark:bg-primary dark:text-secondary snap-y snap-mandatory overflow-y-scroll">
-  <div id="dark-bg-animated"
-       class="pointer-events-none fixed inset-0 z-0 transition-opacity duration-700 opacity-0 dark:opacity-100"
-       aria-hidden="true">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#181824] via-[#1a1a2e] to-[#23234a]"></div>
-    <!-- Círculos -->
-    <div class="absolute left-[-10vw] top-[10vh] w-[40vw] h-[40vw] rounded-full bg-purple-900 opacity-20 blur-2xl"></div>
-    <div class="absolute right-[-15vw] top-[30vh] w-[30vw] h-[30vw] rounded-full bg-purple-700 opacity-30 blur-2xl"></div>
-    <div class="absolute left-[20vw] bottom-[-10vw] w-[35vw] h-[35vw] rounded-full bg-purple-800 opacity-25 blur-2xl"></div>
-    <canvas id="stars-bg" class="absolute inset-0 w-full h-full"></canvas>
-  </div>
-  
-  <nav id="main-nav" class="transition-all duration-500 w-full bg-transparent dark:bg-transparent dark:text-secondary fixed top-0 left-0 z-50 font-sans opacity-0">
-    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
-      <a href="#" class="text-xl font-extrabold tracking-tight text-white hover:text-cyan-400 dark:text-emerald-300 dark:hover:text-yellow-300 transition font-mont">Davyd Fontoura</a>
-      <!-- Menu Desktop -->
-      <ul id="nav-menu" class="hidden md:flex gap-4 items-center list-none font-semibold tracking-wide font-sans">
+  <body
+    class="relative z-10 font-sans bg-secondary text-primary dark:bg-primary dark:text-secondary snap-y snap-mandatory overflow-y-scroll"
+  >
+    <div
+      id="dark-bg-animated"
+      class="pointer-events-none fixed inset-0 z-0 transition-opacity duration-700 opacity-0 dark:opacity-100"
+      aria-hidden="true"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[#181824] via-[#1a1a2e] to-[#23234a]"
+      ></div>
+      <!-- Círculos -->
+      <div
+        class="absolute left-[-10vw] top-[10vh] w-[40vw] h-[40vw] rounded-full bg-purple-900 opacity-20 blur-2xl"
+      ></div>
+      <div
+        class="absolute right-[-15vw] top-[30vh] w-[30vw] h-[30vw] rounded-full bg-purple-700 opacity-30 blur-2xl"
+      ></div>
+      <div
+        class="absolute left-[20vw] bottom-[-10vw] w-[35vw] h-[35vw] rounded-full bg-purple-800 opacity-25 blur-2xl"
+      ></div>
+      <canvas id="stars-bg" class="absolute inset-0 w-full h-full"></canvas>
+    </div>
+
+    <nav
+      id="main-nav"
+      class="transition-all duration-500 w-full bg-transparent dark:bg-transparent dark:text-secondary fixed top-0 left-0 z-50 font-sans opacity-0"
+    >
+      <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
+        <a
+          href="#"
+          class="text-xl font-extrabold tracking-tight text-white hover:text-cyan-400 dark:text-emerald-300 dark:hover:text-yellow-300 transition font-mont"
+          >Davyd Fontoura</a
+        >
+        <!-- Menu Desktop -->
+        <ul
+          id="nav-menu"
+          class="hidden md:flex gap-4 items-center list-none font-semibold tracking-wide font-sans"
+        >
+          <li>
+            <a
+              href="#sobre"
+              class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+              >Sobre mim</a
+            >
+          </li>
+          <li>
+            <a
+              href="#formacao"
+              class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+              >Formação</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projetos"
+              class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+              >Projetos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contato"
+              class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+              >Contato</a
+            >
+          </li>
+        </ul>
+        <!-- Botões à direita -->
+        <div class="flex items-center gap-2">
+          <!-- Botão dark mode -->
+          <button
+            id="toggle-dark"
+            class="bg-cyan-700 text-white p-2 rounded-full shadow hover:bg-cyan-900 transition"
+            aria-label="Alternar modo escuro"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.07l-.71.71M21 12h-1M4 12H3m16.66 4.95l-.71-.71M4.05 4.93l-.71-.71M17 12a5 5 0 11-10 0 5 5 0 0110 0z"
+              />
+            </svg>
+          </button>
+          <!-- Botão menu mobile -->
+          <button
+            id="nav-toggle"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Abrir menu"
+          >
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Menu Mobile -->
+      <ul
+        id="nav-mobile"
+        class="md:hidden hidden flex-col gap-2 px-4 pb-4 border-b font-semibold tracking-wide font-sans bg-[rgba(40,40,50,0.7)] backdrop-blur-lg rounded-b-xl shadow-lg"
+      >
         <li>
-          <a href="#sobre" class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Sobre mim</a>
+          <a
+            href="#sobre"
+            class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+            >Sobre mim</a
+          >
         </li>
         <li>
-          <a href="#formacao" class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Formação</a>
-        </li>
-         <li>
-          <a href="#skills" class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Skills</a>
-        </li>
-        <li>
-          <a href="#projetos" class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Projetos</a>
+          <a
+            href="#formacao"
+            class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+            >Formação</a
+          >
         </li>
         <li>
-          <a href="#contato" class="px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Contato</a>
+          <a
+            href="#skills"
+            class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projetos"
+            class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+            >Projetos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contato"
+            class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition"
+            >Contato</a
+          >
         </li>
       </ul>
-      <!-- Botões à direita -->
-      <div class="flex items-center gap-2">
-        <!-- Botão dark mode -->
-        <button id="toggle-dark" class="bg-cyan-700 text-white p-2 rounded-full shadow hover:bg-cyan-900 transition" aria-label="Alternar modo escuro">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.07l-.71.71M21 12h-1M4 12H3m16.66 4.95l-.71-.71M4.05 4.93l-.71-.71M17 12a5 5 0 11-10 0 5 5 0 0110 0z" />
-          </svg>
-        </button>
-        <!-- Botão menu mobile -->
-        <button id="nav-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+    </nav>
+    <header
+      class="flex flex-col items-center justify-center text-center min-h-screen pt-32 pb-24 px-4 relative transition-colors duration-500"
+    >
+      <div id="presentation-block" class="flex flex-col items-center justify-center w-full">
+        <p
+          id="intro-greeting"
+          class="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-2 bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent opacity-0 translate-y-10 transition-all duration-700"
+        >
+          Olá! Prazer em te ver por aqui
+        </p>
+        <p
+          id="intro-name"
+          class="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-4 bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent opacity-0 translate-y-10 transition-all duration-700"
+        >
+          Me chamo Davyd, como posso ajudar?
+        </p>
       </div>
-    </div>
-    <!-- Menu Mobile -->
-    <ul id="nav-mobile"  class="md:hidden hidden flex-col gap-2 px-4 pb-4 border-b font-semibold tracking-wide font-sans bg-[rgba(40,40,50,0.7)] backdrop-blur-lg rounded-b-xl shadow-lg">
-      <li>
-        <a href="#sobre" class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Sobre mim</a>
-      </li>
-      <li>
-        <a href="#formacao" class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Formação</a>
-      </li>
-      <li>
-        <a href="#skills" class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Skills</a>
-      </li>
-      <li>
-        <a href="#projetos" class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Projetos</a>
-      </li>
-        <a href="#contato" class="block px-4 py-2 rounded-lg font-medium text-white hover:bg-cyan-700 hover:text-white transition">Contato</a>
-      </li>
-    </ul>
-  </nav>
-  <header class="flex flex-col items-center justify-center text-center min-h-screen pt-32 pb-24 px-4 relative transition-colors duration-500">
-  <div id="presentation-block" class="flex flex-col items-center justify-center w-full">
-   <p id="intro-greeting"
-  class="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-2
-         bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300
-         bg-clip-text text-transparent
-          dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent
-         opacity-0 translate-y-10 transition-all duration-700">
-  Olá! Prazer em te ver por aqui
-</p>
-<p id="intro-name"
-  class="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-4
-         bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300
-         bg-clip-text text-transparent
-          dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent
-         opacity-0 translate-y-10 transition-all duration-700">
-  Me chamo Davyd, como posso ajudar?
-</p>
-  </div>
-  <div id="main-title-block" class="flex flex-col items-center justify-center w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-all duration-700">
-    <h1 id="main-title"
-        class="text-6xl sm:text-7xl md:text-8xl font-extrabold mb-2 
-               bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 
-               bg-clip-text text-transparent transition-all 
-               duration-700 dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent">
-      Front-end 
-    </h1>
-    <p id="main-subtitle"
-       class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 
-              bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 
-              bg-clip-text text-transparent transition-all duration-700 delay-200
-              dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent">
-      Developer
-    </p>
-  </div>
-  <!-- Bloco da seta centralizada na parte inferior -->
-  <a href="#sobre" id="scroll-down-btn"
-     class="scroll-indicator absolute left-1/2 bottom-8 -translate-x-1/2 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-[7s] cursor-pointer z-20 focus:outline-none"
-     tabindex="0" aria-label="Deslize para ver mais">
-    <svg class="w-8 h-8 animate-bounce text-neutral-50 dark:text-emerald-300 drop-shadow transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-    </svg>
-    <span class="text-neutral-50 dark:text-emerald-200 text-sm mt-2 block md:hidden drop-shadow transition-colors duration-500 text-center w-full">Deslize para ver mais</span>
-    <span class="text-neutral-50 dark:text-emerald-200 text-sm mt-2 hidden md:block drop-shadow transition-colors duration-500">Clique aqui para ver mais</span>
-  </a>
-</header>
+      <div
+        id="main-title-block"
+        class="flex flex-col items-center justify-center w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-all duration-700"
+      >
+        <h1
+          id="main-title"
+          class="text-6xl sm:text-7xl md:text-8xl font-extrabold mb-2 bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 bg-clip-text text-transparent transition-all duration-700 dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent"
+        >
+          Front-end
+        </h1>
+        <p
+          id="main-subtitle"
+          class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 bg-clip-text text-transparent transition-all duration-700 delay-200 dark:bg-gradient-to-r dark:from-blue-900 dark:via-purple-700 dark:to-zinc-500 dark:bg-clip-text dark:text-transparent"
+        >
+          Developer
+        </p>
+      </div>
+      <!-- Bloco da seta centralizada na parte inferior -->
+      <a
+        href="#sobre"
+        id="scroll-down-btn"
+        class="scroll-indicator absolute left-1/2 bottom-8 -translate-x-1/2 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-[7s] cursor-pointer z-20 focus:outline-none"
+        tabindex="0"
+        aria-label="Deslize para ver mais"
+      >
+        <svg
+          class="w-8 h-8 animate-bounce text-neutral-50 dark:text-emerald-300 drop-shadow transition-colors duration-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <span
+          class="text-neutral-50 dark:text-emerald-200 text-sm mt-2 block md:hidden drop-shadow transition-colors duration-500 text-center w-full"
+          >Deslize para ver mais</span
+        >
+        <span
+          class="text-neutral-50 dark:text-emerald-200 text-sm mt-2 hidden md:block drop-shadow transition-colors duration-500"
+          >Clique aqui para ver mais</span
+        >
+      </a>
+    </header>
     <!-- Sobre -->
-    <section id="sobre" class="min-h-screen flex flex-col items-center justify-center snap-start opacity-0 translate-y-8 transition-all duration-700 py-32">
-      <div class="flex flex-col md:flex-row items-center gap-10 p-8 rounded-2xl shadow-xl bg-white/90 dark:bg-zinc-900/80 max-w-3xl w-full">
+    <section
+      id="sobre"
+      class="min-h-screen flex flex-col items-center justify-center snap-start opacity-0 translate-y-8 transition-all duration-700 py-32"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center gap-10 p-8 rounded-2xl shadow-xl bg-white/90 dark:bg-zinc-900/80 max-w-3xl w-full"
+      >
         <div class="flex-shrink-0 flex justify-center w-full md:w-auto">
-          <img id="profile-img" src="images/Profile.png" alt="Foto de Davyd" class="w-40 h-40 rounded-full shadow-lg ring-4 ring-cyan-400 dark:ring-emerald-400 opacity-0 translate-y-8 transition-all duration-700" loading="lazy" />
+          <img
+            id="profile-img"
+            src="images/Profile.png"
+            alt="Foto de Davyd"
+            class="w-40 h-40 rounded-full shadow-lg ring-4 ring-cyan-400 dark:ring-emerald-400 opacity-0 translate-y-8 transition-all duration-700"
+            loading="lazy"
+          />
         </div>
         <div class="flex-1 flex flex-col justify-center">
-          <h2 class="text-3xl font-bold mb-2 text-cyan-700 dark:text-emerald-300">Davyd Fontoura</h2>
-          <p class="text-gray-700 dark:text-gray-200 mb-4 leading-relaxed text-justify [word-break:break-word]">
-            Sou estudante de <span class="font-semibold text-cyan-600 dark:text-emerald-300">Análise e Desenvolvimento de Sistemas</span>, com grande interesse por tecnologia e desenvolvimento front-end.<br><br>
-            Possuo formação técnica pelo <span class="font-semibold">SENAI</span> e busco constantemente aprimorar meus conhecimentos.<br><br>
-            Tenho capacitação básica em <span class="font-semibold">SEO</span> e estou sempre atualizado com as tendências do setor.<br><br>
-            Gosto de trabalhar com interfaces intuitivas e experiências de usuário eficientes.<br><br>
-            Busco oportunidades para crescer profissionalmente e contribuir com projetos inovadores.<br>
+          <h2 class="text-3xl font-bold mb-2 text-cyan-700 dark:text-emerald-300">
+            Davyd Fontoura
+          </h2>
+          <p
+            class="text-gray-700 dark:text-gray-200 mb-4 leading-relaxed text-justify [word-break:break-word]"
+          >
+            Sou estudante de
+            <span class="font-semibold text-cyan-600 dark:text-emerald-300"
+              >Análise e Desenvolvimento de Sistemas</span
+            >, com grande interesse por tecnologia e desenvolvimento front-end.<br /><br />
+            Possuo formação técnica pelo <span class="font-semibold">SENAI</span> e busco
+            constantemente aprimorar meus conhecimentos.<br /><br />
+            Tenho capacitação básica em <span class="font-semibold">SEO</span> e estou sempre
+            atualizado com as tendências do setor.<br /><br />
+            Gosto de trabalhar com interfaces intuitivas e experiências de usuário eficientes.<br /><br />
+            Busco oportunidades para crescer profissionalmente e contribuir com projetos
+            inovadores.<br />
           </p>
           <ul class="flex flex-wrap gap-3 text-sm text-gray-600 dark:text-gray-300 mb-2">
             <li class="flex items-center gap-1">
-              <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg> Front-end Developer
+              <svg
+                class="w-4 h-4 text-cyan-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              Front-end Developer
             </li>
             <li class="flex items-center gap-1">
-              <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg> Analista de Sistemas
+              <svg
+                class="w-4 h-4 text-cyan-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              Analista de Sistemas
             </li>
             <li class="flex items-center gap-1">
-              <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg> SEO
+              <svg
+                class="w-4 h-4 text-cyan-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              SEO
             </li>
           </ul>
           <div class="flex gap-4 mt-4">
-            <a href="https://github.com/davydfontourac" target="_blank" aria-label="GitHub" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"><img src="images/github-icon.svg" alt="GitHub" class="w-7 h-7" /></a>
-            <a href="https://www.linkedin.com/in/davyd-camargo-70a552261/" target="_blank" aria-label="LinkedIn" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"><img src="images/linkedin-icon.svg" alt="LinkedIn" class="w-7 h-7" /></a>
-            <a href="https://www.instagram.com/davydfontoura/" target="_blank" aria-label="Instagram" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"><img src="images/instagram-icon.svg" alt="Instagram" class="w-7 h-7" /></a>
-            <a href="https://wa.me/5551991286346" target="_blank" aria-label="WhatsApp" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"><img src="images/whatsapp-icon.svg" alt="WhatsApp" class="w-7 h-7" /></a>
+            <a
+              href="https://github.com/davydfontourac"
+              target="_blank"
+              aria-label="GitHub"
+              class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+              ><img src="images/github-icon.svg" alt="GitHub" class="w-7 h-7"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/davyd-camargo-70a552261/"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+              ><img src="images/linkedin-icon.svg" alt="LinkedIn" class="w-7 h-7"
+            /></a>
+            <a
+              href="https://www.instagram.com/davydfontoura/"
+              target="_blank"
+              aria-label="Instagram"
+              class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+              ><img src="images/instagram-icon.svg" alt="Instagram" class="w-7 h-7"
+            /></a>
+            <a
+              href="https://wa.me/5551991286346"
+              target="_blank"
+              aria-label="WhatsApp"
+              class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+              ><img src="images/whatsapp-icon.svg" alt="WhatsApp" class="w-7 h-7"
+            /></a>
           </div>
         </div>
       </div>
-      <div class="scroll-indicator mt-12 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer" tabindex="0" aria-label="Deslize para ver mais">
-        <svg class="w-8 h-8 animate-bounce text-neutral-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      <div
+        class="scroll-indicator mt-12 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer"
+        tabindex="0"
+        aria-label="Deslize para ver mais"
+      >
+        <svg
+          class="w-8 h-8 animate-bounce text-neutral-50"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
         <span class="text-neutral-50 text-sm mt-2 block md:hidden">Deslize para ver mais</span>
         <span class="text-neutral-50 text-sm mt-2 hidden md:block">Clique aqui para ver mais</span>
       </div>
     </section>
     <!-- Formação -->
-    <section id="formacao" class="min-h-screen flex flex-col items-center justify-center snap-start  py-32 opacity-0 translate-y-8 transition-all duration-700">
-      <h2 class="text-3xl font-bold mb-10 text-neutral-50 dark:text-emerald-300 text-center">Formação Acadêmica & Cursos</h2>
-      <div id="formacao-container" class="flex gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0">
-      <!-- Curso 1 -->
-      <div class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent">
-        <img src="images/Png-unisinos.png" alt="Unisinos" class="mb-4 rounded-md w-24 h-24 object-contain shadow" />
-        <h3 class="text-lg font-bold mb-1 text-cyan-700 dark:text-emerald-300 text-center">Análise e Desenvolvimento de Sistemas</h3>
-       <span class="text-xs bg-yellow-300 text-cyan-700 dark:bg-yellow-300 dark:text-cyan-600 px-3 py-1 rounded-full mb-2 text-center block">Unisinos • Em andamento</span>
-        <p class="text-gray-700 dark:text-gray-300 text-center text-sm leading-relaxed">
-        Superior focado em desenvolvimento de software, lógica e dados.
-        </p>
+    <section
+      id="formacao"
+      class="min-h-screen flex flex-col items-center justify-center snap-start py-32 opacity-0 translate-y-8 transition-all duration-700"
+    >
+      <h2 class="text-3xl font-bold mb-10 text-neutral-50 dark:text-emerald-300 text-center">
+        Formação Acadêmica & Cursos
+      </h2>
+      <div
+        id="formacao-container"
+        class="flex gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0"
+      >
+        <!-- Curso 1 -->
+        <div
+          class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent"
+        >
+          <img
+            src="images/Png-unisinos.png"
+            alt="Unisinos"
+            class="mb-4 rounded-md w-24 h-24 object-contain shadow"
+          />
+          <h3 class="text-lg font-bold mb-1 text-cyan-700 dark:text-emerald-300 text-center">
+            Análise e Desenvolvimento de Sistemas
+          </h3>
+          <span
+            class="text-xs bg-yellow-300 text-cyan-700 dark:bg-yellow-300 dark:text-cyan-600 px-3 py-1 rounded-full mb-2 text-center block"
+            >Unisinos • Em andamento</span
+          >
+          <p class="text-gray-700 dark:text-gray-300 text-center text-sm leading-relaxed">
+            Superior focado em desenvolvimento de software, lógica e dados.
+          </p>
+        </div>
+        <!-- Curso 2 -->
+        <div
+          class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent"
+        >
+          <img
+            src="images/Png-senai.png"
+            alt="SENAI"
+            class="mb-4 rounded-md w-24 h-24 object-contain shadow"
+          />
+          <h3 class="text-lg font-bold mb-1 text-cyan-700 dark:text-emerald-300 text-center">
+            Front-end Developer
+          </h3>
+          <span
+            class="text-xs bg-cyan-100 text-cyan-700 dark:bg-emerald-900 dark:text-emerald-200 px-3 py-1 rounded-full mb-2"
+            >SENAI • Concluído</span
+          >
+          <p class="text-gray-700 dark:text-gray-300 text-center text-sm">
+            Técnico em HTML, CSS, JavaScript e web responsiva.
+          </p>
+        </div>
+        <!-- Curso 3 -->
+        <div
+          class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent"
+        >
+          <img
+            src="images/Wiccom-logo.png"
+            alt="Wiccom"
+            class="mb-4 rounded-md w-24 h-24 object-contain shadow"
+          />
+          <h3 class="text-lg font-bold mb-1 text-cyan-700 dark:text-emerald-300 text-center">
+            Capacitação em SEO
+          </h3>
+          <span
+            class="text-xs bg-cyan-100 text-cyan-700 dark:bg-emerald-900 dark:text-emerald-200 px-3 py-1 rounded-full mb-2"
+            >Wiccom • Concluído</span
+          >
+          <p class="text-gray-700 dark:text-gray-300 text-center text-sm">
+            SEO Básico, otimização para buscas e marketing digital.
+          </p>
+        </div>
       </div>
-      <!-- Curso 2 -->
-      <div class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent">
-        <img src="images/Png-senai.png" alt="SENAI" class="mb-4 rounded-md w-24 h-24 object-contain shadow" />
-        <h3 class="text-lg font-bold mb-1 text-cyan-700 dark:text-emerald-300 text-center">Front-end Developer</h3>
-        <span class="text-xs bg-cyan-100 text-cyan-700 dark:bg-emerald-900 dark:text-emerald-200 px-3 py-1 rounded-full mb-2">SENAI • Concluído</span>
-        <p class="text-gray-700 dark:text-gray-300 text-center text-sm">
-        Técnico em HTML, CSS, JavaScript e web responsiva.
-        </p>
-      </div>
-      <!-- Curso 3 -->
-      <div class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent">
-        <img src="images/Wiccom-logo.png" alt="Wiccom" class="mb-4 rounded-md w-24 h-24 object-contain shadow" />
-        <h3 class="text-lg font-bold mb-1 text-cyan-700 dark:text-emerald-300 text-center">Capacitação em SEO</h3>
-        <span class="text-xs bg-cyan-100 text-cyan-700 dark:bg-emerald-900 dark:text-emerald-200 px-3 py-1 rounded-full mb-2">Wiccom • Concluído</span>
-        <p class="text-gray-700 dark:text-gray-300 text-center text-sm">
-        SEO Básico, otimização para buscas e marketing digital.
-        </p>
-      </div>
-      </div>
-      <div class="scroll-indicator mt-12 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer" tabindex="0" aria-label="Deslize para ver mais">
-      <svg class="w-8 h-8 animate-bounce text-neutral-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
-      <span class="text-neutral-50 text-sm mt-2 block md:hidden">Deslize para ver mais</span>
-      <span class="text-neutral-50 text-sm mt-2 hidden md:block">Clique aqui para ver mais</span>
+      <div
+        class="scroll-indicator mt-12 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer"
+        tabindex="0"
+        aria-label="Deslize para ver mais"
+      >
+        <svg
+          class="w-8 h-8 animate-bounce text-neutral-50"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <span class="text-neutral-50 text-sm mt-2 block md:hidden">Deslize para ver mais</span>
+        <span class="text-neutral-50 text-sm mt-2 hidden md:block">Clique aqui para ver mais</span>
       </div>
     </section>
-  <section id="skills" class="min-h-screen flex flex-col items-center justify-center snap-start opacity-0 translate-y-8 transition-all duration-700 py-32">
-    <h2 class="text-3xl font-bold mb-8 text-neutral-50 dark:text-emerald-300 text-center w-full">Minhas Skills</h2>
+    <section
+      id="skills"
+      class="min-h-screen flex flex-col items-center justify-center snap-start opacity-0 translate-y-8 transition-all duration-700 py-32"
+    >
+      <h2 class="text-3xl font-bold mb-8 text-neutral-50 dark:text-emerald-300 text-center w-full">
+        Minhas Skills
+      </h2>
 
-    <!-- Linguagens -->
-    <h3 class="text-xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300 text-center w-full">Linguagens</h3>
-    <div class="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0 mx-auto
-                scrollbar-none scroll-smooth">
-      <!-- Java -->
-      <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
-        data-title="Java"
-        data-desc="Sintaxe básica, orientação a objetos, lógica, criação de classes e métodos, projetos acadêmicos.">
-        <img src="images/java-icon.svg" alt="Java" class="w-12 h-12 mb-2 group-hover:scale-110 transition" />
-        <span class="font-semibold text-lg mb-1">Java</span>
-        <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
-          <div class="bg-red-500 h-3 rounded-full transition-all duration-700 skill-bar" data-skill="35"></div>
+      <!-- Linguagens -->
+      <h3
+        class="text-xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300 text-center w-full"
+      >
+        Linguagens
+      </h3>
+      <div
+        class="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0 mx-auto scrollbar-none scroll-smooth"
+      >
+        <!-- Java -->
+        <div
+          class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
+          data-title="Java"
+          data-desc="Sintaxe básica, orientação a objetos, lógica, criação de classes e métodos, projetos acadêmicos."
+        >
+          <img
+            src="images/java-icon.svg"
+            alt="Java"
+            class="w-12 h-12 mb-2 group-hover:scale-110 transition"
+          />
+          <span class="font-semibold text-lg mb-1">Java</span>
+          <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
+            <div
+              class="bg-red-500 h-3 rounded-full transition-all duration-700 skill-bar"
+              data-skill="35"
+            ></div>
+          </div>
+          <span class="text-xs text-gray-500">Básico</span>
         </div>
-        <span class="text-xs text-gray-500">Básico</span>
+        <!-- JavaScript -->
+        <div
+          class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
+          data-title="JavaScript"
+          data-desc="Manipulação do DOM, ES6+, consumo de APIs, funções assíncronas, eventos, integração com frameworks front-end."
+        >
+          <img
+            src="images/javascript.svg"
+            alt="JavaScript"
+            class="w-12 h-12 mb-2 group-hover:scale-110 transition"
+          />
+          <span class="font-semibold text-lg mb-1">JavaScript</span>
+          <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
+            <div
+              class="bg-yellow-400 h-3 rounded-full transition-all duration-700 skill-bar"
+              data-skill="65"
+            ></div>
+          </div>
+          <span class="text-xs text-gray-500">Intermediário</span>
+        </div>
       </div>
-      <!-- JavaScript -->
-      <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
-    data-title="JavaScript"
-    data-desc="Manipulação do DOM, ES6+, consumo de APIs, funções assíncronas, eventos, integração com frameworks front-end.">
-   <img src="images/javascript.svg" alt="JavaScript" class="w-12 h-12 mb-2 group-hover:scale-110 transition" />
-   <span class="font-semibold text-lg mb-1">JavaScript</span>
-    <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
-    <div class="bg-yellow-400 h-3 rounded-full transition-all duration-700 skill-bar" data-skill="65"></div>
-  </div>
-  <span class="text-xs text-gray-500">Intermediário</span>
-</div>
-    </div>
 
-    <!-- Marcação e Estilo -->
-    <h3 class="text-xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300 text-center w-full">Marcação e Estilo</h3>
-    <div class="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0 mx-auto
-                scrollbar-none scroll-smooth">
-      <!-- HTML -->
-      <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
-        data-title="HTML"
-        data-desc="HTML5 avançado, semântico, acessível, SEO on-page, estruturação de páginas e formulários.">
-        <img src="images/html-icon.png" alt="HTML" class="w-12 h-12 mb-2 group-hover:scale-110 transition" />
-        <span class="font-semibold text-lg mb-1">HTML</span>
-        <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
-          <div class="bg-green-500 h-3 rounded-full transition-all duration-700 skill-bar" data-skill="85"></div>
+      <!-- Marcação e Estilo -->
+      <h3
+        class="text-xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300 text-center w-full"
+      >
+        Marcação e Estilo
+      </h3>
+      <div
+        class="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0 mx-auto scrollbar-none scroll-smooth"
+      >
+        <!-- HTML -->
+        <div
+          class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
+          data-title="HTML"
+          data-desc="HTML5 avançado, semântico, acessível, SEO on-page, estruturação de páginas e formulários."
+        >
+          <img
+            src="images/html-icon.png"
+            alt="HTML"
+            class="w-12 h-12 mb-2 group-hover:scale-110 transition"
+          />
+          <span class="font-semibold text-lg mb-1">HTML</span>
+          <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
+            <div
+              class="bg-green-500 h-3 rounded-full transition-all duration-700 skill-bar"
+              data-skill="85"
+            ></div>
+          </div>
+          <span class="text-xs text-gray-500">Avançado</span>
         </div>
-        <span class="text-xs text-gray-500">Avançado</span>
-      </div>
-      <!-- CSS -->
-      <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
-        data-title="CSS"
-        data-desc="Flexbox, Grid, responsividade, animações, custom properties, pseudo-elementos e media queries.">
-        <img src="images/css-icon.png" alt="CSS" class="w-12 h-12 mb-2 group-hover:scale-110 transition" />
-        <span class="font-semibold text-lg mb-1">CSS</span>
-        <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
-          <div class="bg-yellow-400 h-3 rounded-full transition-all duration-700 skill-bar" data-skill="75"></div>
+        <!-- CSS -->
+        <div
+          class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
+          data-title="CSS"
+          data-desc="Flexbox, Grid, responsividade, animações, custom properties, pseudo-elementos e media queries."
+        >
+          <img
+            src="images/css-icon.png"
+            alt="CSS"
+            class="w-12 h-12 mb-2 group-hover:scale-110 transition"
+          />
+          <span class="font-semibold text-lg mb-1">CSS</span>
+          <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
+            <div
+              class="bg-yellow-400 h-3 rounded-full transition-all duration-700 skill-bar"
+              data-skill="75"
+            ></div>
+          </div>
+          <span class="text-xs text-gray-500">Intermediário</span>
         </div>
-        <span class="text-xs text-gray-500">Intermediário</span>
       </div>
-    </div>
 
-    <!-- Frameworks & Ferramentas -->
-    <h3 class="text-xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300 text-center w-full">Frameworks & Ferramentas</h3>
-    <div class="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0 mx-auto
-                scrollbar-none scroll-smooth">
-      <!-- React -->
-      <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
-        data-title="React"
-        data-desc="Aprendendo hooks, componentes funcionais, integração com APIs e gerenciamento de estado.">
-        <img src="images/react-icon.svg" alt="React" class="w-12 h-12 mb-2 group-hover:scale-110 transition" />
-        <span class="font-semibold text-lg mb-1">React</span>
-        <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
-          <div class="bg-red-500 h-3 rounded-full transition-all duration-700 skill-bar" data-skill="40"></div>
+      <!-- Frameworks & Ferramentas -->
+      <h3
+        class="text-xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300 text-center w-full"
+      >
+        Frameworks & Ferramentas
+      </h3>
+      <div
+        class="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 w-full max-w-5xl px-2 sm:px-0 mx-auto scrollbar-none scroll-smooth"
+      >
+        <!-- React -->
+        <div
+          class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
+          data-title="React"
+          data-desc="Aprendendo hooks, componentes funcionais, integração com APIs e gerenciamento de estado."
+        >
+          <img
+            src="images/react-icon.svg"
+            alt="React"
+            class="w-12 h-12 mb-2 group-hover:scale-110 transition"
+          />
+          <span class="font-semibold text-lg mb-1">React</span>
+          <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
+            <div
+              class="bg-red-500 h-3 rounded-full transition-all duration-700 skill-bar"
+              data-skill="40"
+            ></div>
+          </div>
+          <span class="text-xs text-gray-500">Básico</span>
         </div>
-        <span class="text-xs text-gray-500">Básico</span>
-      </div>
-      <!-- SEO -->
-      <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
-        data-title="SEO"
-        data-desc="Otimização para mecanismos de busca, SEO técnico, SEO on-page e estratégias de marketing digital.">
-        <img src="images/seo-icon.svg" alt="SEO" class="w-12 h-12 mb-2 group-hover:scale-110 transition" />
-        <span class="font-semibold text-lg mb-1">SEO</span>
-        <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
-          <div class="bg-yellow-400 h-3 rounded-full transition-all duration-700 skill-bar" data-skill="60"></div>
+        <!-- SEO -->
+        <div
+          class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg snap-center min-w-[220px] max-w-[220px] sm:min-w-[320px] sm:max-w-[320px] flex flex-col items-center p-6 md:p-8 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 transition-all duration-300 cursor-pointer group skill-card"
+          data-title="SEO"
+          data-desc="Otimização para mecanismos de busca, SEO técnico, SEO on-page e estratégias de marketing digital."
+        >
+          <img
+            src="images/seo-icon.svg"
+            alt="SEO"
+            class="w-12 h-12 mb-2 group-hover:scale-110 transition"
+          />
+          <span class="font-semibold text-lg mb-1">SEO</span>
+          <div class="w-full bg-gray-200 rounded-full h-3 mb-1 overflow-hidden">
+            <div
+              class="bg-yellow-400 h-3 rounded-full transition-all duration-700 skill-bar"
+              data-skill="60"
+            ></div>
+          </div>
+          <span class="text-xs text-gray-500">Intermediário</span>
         </div>
-        <span class="text-xs text-gray-500">Intermediário</span>
+      </div>
+
+      <div
+        class="scroll-indicator mt-12 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer"
+        tabindex="0"
+        aria-label="Deslize para ver mais"
+      >
+        <svg
+          class="w-8 h-8 animate-bounce text-neutral-50"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <span class="text-neutral-50 text-sm mt-2 block md:hidden">Deslize para ver mais</span>
+        <span class="text-neutral-50 text-sm mt-2 hidden md:block">Clique aqui para ver mais</span>
+      </div>
+    </section>
+
+    <!-- Modal de Skill -->
+    <div
+      id="skill-modal"
+      class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white dark:bg-zinc-900 rounded-xl shadow-lg p-8 max-w-sm w-full relative">
+        <button
+          id="close-skill-modal"
+          class="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-2xl"
+        >
+          &times;
+        </button>
+        <h3
+          id="skill-modal-title"
+          class="text-xl font-bold mb-2 text-cyan-700 dark:text-emerald-300"
+        ></h3>
+        <p id="skill-modal-desc" class="text-gray-700 dark:text-gray-200"></p>
       </div>
     </div>
-
-    <div class="scroll-indicator mt-12 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer" tabindex="0" aria-label="Deslize para ver mais">
-      <svg class="w-8 h-8 animate-bounce text-neutral-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
-      <span class="text-neutral-50 text-sm mt-2 block md:hidden">Deslize para ver mais</span>
-      <span class="text-neutral-50  text-sm mt-2 hidden md:block">Clique aqui para ver mais</span>
-    </div>
-  </section>
-
-  <!-- Modal de Skill -->
-  <div id="skill-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
-    <div class="bg-white dark:bg-zinc-900 rounded-xl shadow-lg p-8 max-w-sm w-full relative">
-      <button id="close-skill-modal" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-2xl">&times;</button>
-      <h3 id="skill-modal-title" class="text-xl font-bold mb-2 text-cyan-700 dark:text-emerald-300"></h3>
-      <p id="skill-modal-desc" class="text-gray-700 dark:text-gray-200"></p>
-    </div>
-  </div>
 
     <!-- Projetos -->
-    <section id="projetos" class="min-h-screen flex flex-col justify-center max-w-5xl mx-auto px-4 py-12 snap-start opacity-0 translate-y-8 transition-all duration-700 py-32">
-      <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 bg-clip-text text-neutral-50 dark:text-emerald-300">Projetos em Destaque</h2>
+    <section
+      id="projetos"
+      class="min-h-screen flex flex-col justify-center max-w-5xl mx-auto px-4 py-12 snap-start opacity-0 translate-y-8 transition-all duration-700 py-32"
+    >
+      <h2
+        class="text-3xl font-bold mb-8 bg-gradient-to-r from-cyan-600 via-emerald-300 to-yellow-300 bg-clip-text text-neutral-50 dark:text-emerald-300"
+      >
+        Projetos em Destaque
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex-1">
-      <!-- Projeto 1 -->
-      <div class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300">
-        <div class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center">
-         <img src="images/portfolio.png" alt="Portfólio Pessoal" class="w-full h-full object-cover rounded-lg opacity-70" />
+        <!-- Projeto 1 -->
+        <div
+          class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
+        >
+          <div
+            class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
+          >
+            <img
+              src="images/portfolio.png"
+              alt="Portfólio Pessoal"
+              class="w-full h-full object-cover rounded-lg opacity-70"
+            />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
+            Portfólio Pessoal
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">
+            Este próprio site, feito com HTML, Tailwind CSS e JavaScript, com foco em design
+            responsivo e animações suaves.
+          </p>
+          <span
+            class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
+            >Ainda em desenvolvimento</span
+          >
+          <div class="flex gap-2 mt-auto">
+            <a
+              href="#"
+              class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60"
+              >Ver repositório</a
+            >
+          </div>
         </div>
-        <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">Portfólio Pessoal</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-2">Este próprio site, feito com HTML, Tailwind CSS e JavaScript, com foco em design responsivo e animações suaves.</p>
-        <span class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2">Ainda em desenvolvimento</span>
-        <div class="flex gap-2 mt-auto">
-          <a href="#" class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60">Ver repositório</a>
+        <!-- Projeto 2 -->
+        <div
+          class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
+        >
+          <div
+            class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
+          >
+            <img
+              src="images/project-store.svg"
+              alt="Sistema de Gerenciamento de Loja"
+              class="w-16 h-16 opacity-70"
+            />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
+            Sistema de Gerenciamento de Loja
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">
+            Projeto Java com classes como Loja, Produto, Endereço e Data, implementando lógica de
+            negócio e validações básicas.
+          </p>
+          <span
+            class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
+            >Ainda em desenvolvimento</span
+          >
+          <div class="flex gap-2 mt-auto">
+            <a
+              href="#"
+              class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60"
+              >Ver repositório</a
+            >
+          </div>
+        </div>
+        <!-- Projeto 3 -->
+        <div
+          class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
+        >
+          <div
+            class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
+          >
+            <img
+              src="images/project-portfolio.svg"
+              alt="Portfólio Pessoal"
+              class="w-16 h-16 opacity-70"
+            />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
+            Loja Online
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">
+            Projeto ecommerce, com banco de dados Mysql e linguagem c#, com a função de cadastro de
+            clientes, cadastro de produtos entre outras coisas.
+          </p>
+          <span
+            class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
+            >Ainda em desenvolvimento</span
+          >
+          <div class="flex gap-2 mt-auto">
+            <a
+              href="#"
+              class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60"
+              >Ver repositório</a
+            >
+          </div>
         </div>
       </div>
-      <!-- Projeto 2 -->
-      <div class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300">
-        <div class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center">
-        <img src="images/project-store.svg" alt="Sistema de Gerenciamento de Loja" class="w-16 h-16 opacity-70" />
-        </div>
-        <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">Sistema de Gerenciamento de Loja</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-2">Projeto Java com classes como Loja, Produto, Endereço e Data, implementando lógica de negócio e validações básicas.</p>
-        <span class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2">Ainda em desenvolvimento</span>
-        <div class="flex gap-2 mt-auto">
-        <a href="#" class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60">Ver repositório</a>
-        </div>
-      </div>
-      <!-- Projeto 3 -->
-      <div class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300">
-        <div class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center">
-        <img src="images/project-portfolio.svg" alt="Portfólio Pessoal" class="w-16 h-16 opacity-70" />
-        </div>
-        <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">Loja Online </h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-2">Projeto ecommerce, com banco de dados Mysql e linguagem c#, com a função de cadastro de clientes, cadastro de produtos entre outras coisas.</p>
-        <span class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2">Ainda em desenvolvimento</span>
-        <div class="flex gap-2 mt-auto">
-        <a href="#" class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60">Ver repositório</a>
-        </div>
-      </div>
-      </div>
-      <div class="scroll-indicator mt-8 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer" tabindex="0" aria-label="Deslize para ver mais">
-      <svg class="w-8 h-8 animate-bounce text-neutral-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
-      <span class="text-neutral-50 text-sm mt-2 block md:hidden">Deslize para ver mais</span>
-      <span class="text-neutral-50 text-sm mt-2 hidden md:block">Clique aqui para ver mais</span>
+      <div
+        class="scroll-indicator mt-8 flex flex-col items-center opacity-0 transition-opacity duration-700 delay-700 cursor-pointer"
+        tabindex="0"
+        aria-label="Deslize para ver mais"
+      >
+        <svg
+          class="w-8 h-8 animate-bounce text-neutral-50"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <span class="text-neutral-50 text-sm mt-2 block md:hidden">Deslize para ver mais</span>
+        <span class="text-neutral-50 text-sm mt-2 hidden md:block">Clique aqui para ver mais</span>
       </div>
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="min-h-screen flex flex-col items-center justify-center opacity-0 translate-y-8 transition-all duration-700 py-32">
+    <section
+      id="contato"
+      class="min-h-screen flex flex-col items-center justify-center opacity-0 translate-y-8 transition-all duration-700 py-32"
+    >
       <div class="w-full max-w-3xl px-4 py-12">
-      <h2 class="text-2xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300">Contato</h2>
-      <form id="contato-form" action="https://formspree.io/f/xldbddkq" method="POST" class="space-y-4">
-        <input type="text" name="nome" placeholder="Nome" required
-          class="w-full border-2 border-black dark:border-emerald-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition text-gray-900 dark:text-gray-100 bg-white dark:bg-zinc-800 placeholder-gray-400 dark:placeholder-gray-400" />
-        <input type="email" name="email" placeholder="Email" required
-          class="w-full border-2 border-black dark:border-emerald-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition text-gray-900 dark:text-gray-100 bg-white dark:bg-zinc-800 placeholder-gray-400 dark:placeholder-gray-400" />
-        <textarea name="mensagem" placeholder="Mensagem" rows="4" required
-          class="w-full border-2 border-black dark:border-emerald-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition text-gray-900 dark:text-gray-100 bg-white dark:bg-zinc-800 placeholder-gray-400 dark:placeholder-gray-400"></textarea>
-        <button type="submit" class="bg-cyan-700 text-white px-6 py-2 rounded-md hover:bg-cyan-900 transition font-semibold">Enviar</button>
-        <div id="form-feedback" class="hidden mt-2 text-center text-green-600 font-semibold"></div>
-      </form>
-      <!-- Redes sociais -->
-      <div class="flex justify-center gap-6 mt-8">
-        <a href="https://github.com/davydfontourac" target="_blank" aria-label="GitHub" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200">
-        <img src="images/github-icon.svg" alt="GitHub" class="w-8 h-8" />
-        </a>
-        <a href="https://www.linkedin.com/in/davyd-camargo-70a552261/" target="_blank" aria-label="LinkedIn" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200">
-        <img src="images/linkedin-icon.svg" alt="LinkedIn" class="w-8 h-8" />
-        </a>
-        <a href="https://www.instagram.com/davydfontoura/" target="_blank" aria-label="Instagram" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200">
-        <img src="images/instagram-icon.svg" alt="Instagram" class="w-8 h-8" />
-        </a>
-        <a href="https://wa.me/5551991286346" target="_blank" aria-label="WhatsApp" class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200">
-        <img src="images/whatsapp-icon.svg" alt="WhatsApp" class="w-8 h-8" />
-        </a>
-      </div>
+        <h2 class="text-2xl font-semibold mb-4 text-neutral-50 dark:text-emerald-300">Contato</h2>
+        <form
+          id="contato-form"
+          action="https://formspree.io/f/xldbddkq"
+          method="POST"
+          class="space-y-4"
+        >
+          <input
+            type="text"
+            name="nome"
+            placeholder="Nome"
+            required
+            class="w-full border-2 border-black dark:border-emerald-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition text-gray-900 dark:text-gray-100 bg-white dark:bg-zinc-800 placeholder-gray-400 dark:placeholder-gray-400"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class="w-full border-2 border-black dark:border-emerald-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition text-gray-900 dark:text-gray-100 bg-white dark:bg-zinc-800 placeholder-gray-400 dark:placeholder-gray-400"
+          />
+          <textarea
+            name="mensagem"
+            placeholder="Mensagem"
+            rows="4"
+            required
+            class="w-full border-2 border-black dark:border-emerald-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition text-gray-900 dark:text-gray-100 bg-white dark:bg-zinc-800 placeholder-gray-400 dark:placeholder-gray-400"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-cyan-700 text-white px-6 py-2 rounded-md hover:bg-cyan-900 transition font-semibold"
+          >
+            Enviar
+          </button>
+          <div
+            id="form-feedback"
+            class="hidden mt-2 text-center text-green-600 font-semibold"
+          ></div>
+        </form>
+        <!-- Redes sociais -->
+        <div class="flex justify-center gap-6 mt-8">
+          <a
+            href="https://github.com/davydfontourac"
+            target="_blank"
+            aria-label="GitHub"
+            class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+          >
+            <img src="images/github-icon.svg" alt="GitHub" class="w-8 h-8" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/davyd-camargo-70a552261/"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+          >
+            <img src="images/linkedin-icon.svg" alt="LinkedIn" class="w-8 h-8" />
+          </a>
+          <a
+            href="https://www.instagram.com/davydfontoura/"
+            target="_blank"
+            aria-label="Instagram"
+            class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+          >
+            <img src="images/instagram-icon.svg" alt="Instagram" class="w-8 h-8" />
+          </a>
+          <a
+            href="https://wa.me/5551991286346"
+            target="_blank"
+            aria-label="WhatsApp"
+            class="hover:scale-110 hover:text-cyan-600 transition-transform duration-200"
+          >
+            <img src="images/whatsapp-icon.svg" alt="WhatsApp" class="w-8 h-8" />
+          </a>
+        </div>
       </div>
       <footer class="w-full text-center py-4 bg-transparent text-gray-500 text-sm mt-8">
-       © 2025 Davyd Fontoura. Todos os direitos reservados.
-        </footer>
+        © 2025 Davyd Fontoura. Todos os direitos reservados.
+      </footer>
     </section>
-     <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
+```

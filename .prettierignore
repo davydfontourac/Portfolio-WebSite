@@ -1,0 +1,6 @@
+// Prettier configuration file
+
+node_modules
+dist
+build
+*.svg

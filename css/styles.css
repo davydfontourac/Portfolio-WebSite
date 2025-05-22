@@ -16,6 +16,11 @@ body {
   color: #1e1e1e;
 }
 
+html.dark body {
+  background: #181824 !important; /* Ou a cor escura que preferir */
+  color: #f9f7f5;
+}
+
 /* Corrige cor de seleção do texto para o site inteiro */
 ::selection {
   background: #38bdf8; /* cyan-400 do Tailwind */

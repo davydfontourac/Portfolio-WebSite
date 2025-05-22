@@ -1,10 +1,14 @@
-# Portfólio Pessoal
+# Portfólio Website - v1.0
 
-Este é o portfólio pessoal de Davyd Fontoura, desenvolvido com HTML, Tailwind CSS e JavaScript.
+Este é o meu website portfólio, desenvolvido com HTML, Tailwind CSS e JavaScript.
 
-[![Screenshot do site](/images/portfolio.png)](https://davydfontourac.github.io/meu-portfolio/)
+<p align="center">
+    <strong style="font-size:2em; color:#2563eb; background:#e0e7ff; padding:0.5em 1em; border-radius:8px; display:inline-block;">
+        CLIQUE PARA VISUALIZAR!
+    </strong>
+</p>
 
-Acesse o site: [https://davydfontourac.github.io/meu-portfolio/](https://davydfontourac.github.io/meu-portfolio/)
+[![Screenshot do site](/images/portfolio.png)](https://davydportfoliowebsite.vercel.app/)
 
 
 ## Estrutura do Projeto

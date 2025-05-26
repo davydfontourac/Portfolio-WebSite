@@ -105,18 +105,6 @@ html.dark body {
   display: none; /* Chrome, Safari e Opera */
 }
 
-a img[alt='GitHub'] {
-  filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
-}
-
-a img[alt='LinkedIn'] {
-  filter: invert(29%) sepia(85%) saturate(749%) hue-rotate(180deg) brightness(91%) contrast(90%);
-}
-
-a img[alt='Instagram'] {
-  filter: invert(48%) sepia(22%) saturate(749%) hue-rotate(320deg) brightness(91%) contrast(85%);
-}
-
 .nav-visible {
   background: #282832; /* cinza escuro sólido */
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.18);

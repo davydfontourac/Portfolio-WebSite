@@ -369,15 +369,3 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
-
-// Troca para modo claro após mostrar "Front-end"
-document.addEventListener('DOMContentLoaded', () => {
-  const mainTitleBlock = document.getElementById('main-title-block');
-  setTimeout(() => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      const bg = document.getElementById('dark-bg-animated');
-      if (bg) bg.style.opacity = '0';
-    }
-  }, 9400); // ajuste esse valor se sua animação for mais longa ou curta
-});

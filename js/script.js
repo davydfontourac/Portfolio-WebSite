@@ -271,100 +271,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const hiThere = document.getElementById('intro-greeting');
-  const intro = document.getElementById('intro-name');
-  const mainTitleBlock = document.getElementById('main-title-block');
-  const nav = document.getElementById('main-nav');
-
-  // Novos textos
-  const hiThereText = 'Olá! Prazer em te ver por aqui';
-  const introText = 'Me chamo Davyd, como posso ajudar?';
-
-  // Esconde todos inicialmente
-  hiThere.innerHTML = '';
-  intro.innerHTML = '';
-  mainTitleBlock.style.opacity = 0;
-  if (nav) nav.classList.add('opacity-0');
-
-  // Cria o cursor piscando
-  function getCursorHTML() {
-    return '<span class="type-cursor" style="display:inline-block;width:1ch;animation:blink 1s steps(1) infinite;">|</span>';
-  }
-
-  // Efeito de máquina de escrever com fade-in em cada letra
-  function typeEffect(element, text, delay = 65, callback) {
-    element.innerHTML = '';
-    let i = 0;
-    function type() {
-      if (i <= text.length) {
-        // Cria um span para cada letra para animar o fade-in
-        let html = '';
-        for (let j = 0; j < i; j++) {
-          html += `<span style="opacity:1;transition:opacity 0.2s">${text[j]}</span>`;
-        }
-        // Letra atual (fade-in)
-        if (i < text.length) {
-          html += `<span style="opacity:0;transition:opacity 0.2s">${text[i]}</span>`;
-        }
-        element.innerHTML = html + getCursorHTML();
-        // Faz a letra atual aparecer suavemente
-        if (i < text.length) {
-          setTimeout(() => {
-            const spans = element.querySelectorAll('span');
-            if (spans[i]) spans[i].style.opacity = 1;
-          }, 10);
-        }
-        i++;
-        setTimeout(type, delay);
-      } else {
-        // Remove cursor após um tempo
-        setTimeout(() => {
-          element.innerHTML = text;
-          if (callback) setTimeout(callback, 400);
-        }, 600);
-      }
-    }
-    type();
-  }
-
-  // Inicia animação
-  setTimeout(() => {
-    hiThere.style.opacity = 1;
-    hiThere.style.transform = 'translateY(0)';
-    typeEffect(hiThere, hiThereText, 65, () => {
-      setTimeout(() => {
-        hiThere.style.opacity = 0;
-        intro.style.opacity = 1;
-        intro.style.transform = 'translateY(0)';
-        typeEffect(intro, introText, 65, () => {
-          setTimeout(() => {
-            intro.style.opacity = 0;
-            mainTitleBlock.style.opacity = 1;
-            // Só mostra o nav depois de tudo
-            if (nav) {
-              nav.classList.remove('opacity-0');
-              nav.classList.add('opacity-100');
-            }
-          }, 900);
-        });
-      }, 600);
-    });
-  }, 400);
-});
-
-// Adicione o CSS do cursor piscando (no JS para garantir que funcione)
-(function () {
-  const style = document.createElement('style');
-  style.innerHTML = `
-    @keyframes blink {
-      0%,100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .type-cursor { font-weight: bold; color: inherit; }
-  `;
-  document.head.appendChild(style);
-})();
+// Remover qualquer código relacionado à apresentação inicial
+// Por exemplo:
+// const introGreeting = document.getElementById('intro-greeting');
+// const introName = document.getElementById('intro-name');
+// const presentationBlock = document.getElementById('presentation-block');
+// const mainTitleBlock = document.getElementById('main-title-block');
+// const mainTitle = document.getElementById('main-title');
+// const mainSubtitle = document.getElementById('main-subtitle');
+// ...e qualquer animação ou manipulação desses elementos...
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);

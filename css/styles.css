@@ -135,12 +135,6 @@ html.dark body {
 }
 
 @media (max-width: 400px) {
-  #main-subtitle,
-  #intro-greeting,
-  #intro-name {
-    font-size: 1.8rem !important;
-    line-height: 2rem !important;
-  }
   #main-nav {
     padding-top: 1.2rem !important;
   }

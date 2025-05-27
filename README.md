@@ -1,4 +1,4 @@
-# Portfólio Website - v1.0
+# Portfólio Website - v2.0
 
 Este é o meu website portfólio, desenvolvido com HTML, Tailwind CSS e JavaScript.
 
@@ -14,16 +14,15 @@ Este é o meu website portfólio, desenvolvido com HTML, Tailwind CSS e JavaScri
   </a>
 </p>
 
-
-
-
 ## Estrutura do Projeto
+
 - `index.html`: Página principal do portfólio.
 - `css/styles.css`: Arquivo de estilos personalizados.
 - `js/scripts.js`: Arquivo de scripts JavaScript.
 - `images/`: Pasta com imagens utilizadas no site.
 
 ## Tecnologias Utilizadas
+
 - HTML
 - Tailwind CSS
 - JavaScript

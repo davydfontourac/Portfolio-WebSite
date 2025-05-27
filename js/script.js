@@ -114,35 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  // ...outros scripts...
-
-  // Modal de skills
-  const modal = document.getElementById('skill-modal');
-  const modalTitle = document.getElementById('skill-modal-title');
-  const modalDesc = document.getElementById('skill-modal-desc');
-  const closeModal = document.getElementById('close-skill-modal');
-
-  document.querySelectorAll('.skill-card').forEach((card) => {
-    card.addEventListener('click', () => {
-      modalTitle.textContent = card.getAttribute('data-title');
-      modalDesc.textContent = card.getAttribute('data-desc');
-      modal.classList.remove('hidden');
-    });
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
-
-  // Fecha modal ao clicar fora
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.add('hidden');
-    }
-  });
-});
-
 // Animação de surgir nas seções ao rolar
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
@@ -287,3 +258,25 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsSection = document.getElementById('skills');
+  if (skillsSection) {
+    let loaded = false;
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !loaded) {
+            loaded = true;
+            const script = document.createElement('script');
+            script.src = 'js/modal-skills.js';
+            document.body.appendChild(script);
+            observer.unobserve(skillsSection);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(skillsSection);
+  }
+});

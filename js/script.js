@@ -58,6 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 900);
 
     indicator.addEventListener('click', () => {
+      // Se for o indicador do header, rola para #sobre
+      if (indicator.id === 'scroll-indicator-header') {
+        const sobre = document.getElementById('sobre');
+        if (sobre) sobre.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      // Caso padrão: rola para a próxima seção
       const sections = Array.from(document.querySelectorAll('section[id]'));
       const currentSection = indicator.closest('section');
       const idx = sections.indexOf(currentSection);
@@ -68,6 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     indicator.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
+        // Se for o indicador do header, rola para #sobre
+        if (indicator.id === 'scroll-indicator-header') {
+          const sobre = document.getElementById('sobre');
+          if (sobre) sobre.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+        // Caso padrão: rola para a próxima seção
         const sections = Array.from(document.querySelectorAll('section[id]'));
         const currentSection = indicator.closest('section');
         const idx = sections.indexOf(currentSection);
@@ -150,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Smooth scroll para todos os links do nav que começam com #
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', function (e) {
@@ -270,16 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-// Remover qualquer código relacionado à apresentação inicial
-// Por exemplo:
-// const introGreeting = document.getElementById('intro-greeting');
-// const introName = document.getElementById('intro-name');
-// const presentationBlock = document.getElementById('presentation-block');
-// const mainTitleBlock = document.getElementById('main-title-block');
-// const mainTitle = document.getElementById('main-title');
-// const mainSubtitle = document.getElementById('main-subtitle');
-// ...e qualquer animação ou manipulação desses elementos...
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);

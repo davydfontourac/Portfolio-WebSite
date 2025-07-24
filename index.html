@@ -9,34 +9,16 @@
     />
     <meta name="keywords" content="Portfólio, Front-end, Desenvolvedor, HTML, CSS, JavaScript" />
     <meta name="author" content="Davyd Fontoura" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon_io/site.webmanifest" />
     <title>Davyd Fontoura | Portfólio</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="dist/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: '#1e1e1e',
-              secondary: '#f9f7f5',
-            },
-            fontFamily: {
-              sans: ['Open Sans', 'Inter', 'sans-serif'],
-              mont: ['Montserrat', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
   </head>
   <body
     class="relative z-10 font-sans bg-secondary text-primary dark:bg-primary dark:text-secondary snap-y snap-mandatory flex flex-col min-h-screen"
@@ -190,7 +172,7 @@
       </ul>
     </nav>
     <header
-      class="flex flex-col items-center justify-center min-h-screen pt-32 md:pt-36 pb-24 px-4 relative transition-colors duration-500"
+      class="flex flex-col items-center justify-center min-h-screen pt-32 md:pt-12 pb-24 px-4 relative transition-colors duration-500"
     >
       <div
         class="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center justify-between gap-10 z-10"
@@ -228,7 +210,7 @@
               aria-label="GitHub"
               class="flex items-center gap-2 bg-white/10 hover:bg-cyan-700 text-cyan-200 px-4 py-3 rounded-lg transition-all duration-200"
             >
-              <img src="images/github-icon.svg" alt="GitHub" class="w-6 h-6" />
+              <img src="images/Icons/github-icon.svg" alt="GitHub" class="w-6 h-6" />
               GitHub
             </a>
             <a
@@ -237,14 +219,14 @@
               aria-label="LinkedIn"
               class="flex items-center gap-2 bg-white/10 hover:bg-cyan-700 text-cyan-200 px-4 py-3 rounded-lg transition-all duration-200"
             >
-              <img src="images/linkedin-icon.svg" alt="LinkedIn" class="w-6 h-6" />
+              <img src="images/Icons/linkedin-icon.svg" alt="LinkedIn" class="w-6 h-6" />
               LinkedIn
             </a>
           </div>
         </div>
         <div class="hidden md:flex flex-shrink-0 justify-end w-full md:w-auto mt-10 md:mt-0">
           <img
-            src="/images/image_profile_home.png"
+            src="images/perfil/image_profile_home.png"
             alt="Foto de Davyd"
             class="w-80 h-80 md:h-[28rem] object-cover object-center profile-home-img shadow-2xl"
             style="
@@ -292,7 +274,7 @@
         <div class="flex-shrink-0 flex justify-center w-full md:w-auto">
           <img
             id="profile-img"
-            src="images/Profile.png"
+            src="images/perfil/Profile.png"
             alt="Foto de Davyd"
             class="w-40 h-40 rounded-full shadow-lg ring-4 ring-cyan-400 dark:ring-emerald-400 opacity-0 translate-y-8 transition-all duration-700"
             loading="lazy"
@@ -413,7 +395,7 @@
           class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent"
         >
           <img
-            src="images/Png-unisinos.png"
+            src="images/logos/Png-unisinos.png"
             alt="Unisinos"
             class="mb-4 rounded-md w-24 h-24 object-contain shadow"
           />
@@ -433,7 +415,7 @@
           class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent"
         >
           <img
-            src="images/Png-senai.png"
+            src="images/logos/Png-senai.png"
             alt="SENAI"
             class="mb-4 rounded-md w-24 h-24 object-contain shadow"
           />
@@ -453,7 +435,7 @@
           class="bg-white dark:bg-zinc-900 dark:text-secondary p-8 rounded-2xl shadow-lg snap-center min-w-[320px] max-w-[320px] flex flex-col items-center transition-transform hover:scale-105 hover:shadow-2xl hover:border-cyan-400 border border-transparent"
         >
           <img
-            src="images/Wiccom-logo.png"
+            src="images/Icons/Wiccom-logo.png"
             alt="Wiccom"
             class="mb-4 rounded-md w-24 h-24 object-contain shadow"
           />
@@ -515,7 +497,7 @@
           data-desc="Sintaxe básica, orientação a objetos, lógica, criação de classes e métodos, projetos acadêmicos."
         >
           <img
-            src="images/java-icon.svg"
+            src="images/Icons/java-icon.svg"
             alt="Java"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -535,7 +517,7 @@
           data-desc="Manipulação do DOM, ES6+, consumo de APIs, funções assíncronas, eventos, integração com frameworks front-end."
         >
           <img
-            src="images/javascript.svg"
+            src="images/Icons/javascript.svg"
             alt="JavaScript"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -555,7 +537,7 @@
           data-desc="Sintaxe básica, scripts simples, lógica de programação, automação e exercícios acadêmicos."
         >
           <img
-            src="/images/python.svg"
+            src="images/Icons/python.svg"
             alt="Python"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -575,7 +557,7 @@
           data-desc="Sintaxe básica, orientação a objetos, lógica, criação de classes e métodos, projetos acadêmicos."
         >
           <img
-            src="images/csharp-icon.svg"
+            src="images/Icons/csharp-icon.svg"
             alt="C#"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -604,7 +586,7 @@
           data-desc="HTML5 avançado, semântico, acessível, SEO on-page, estruturação de páginas e formulários."
         >
           <img
-            src="images/html-icon.png"
+            src="images/Icons/html-icon.png"
             alt="HTML"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -624,7 +606,7 @@
           data-desc="Flexbox, Grid, responsividade, animações, custom properties, pseudo-elementos e media queries."
         >
           <img
-            src="images/css-icon.png"
+            src="images/Icons/css-icon.png"
             alt="CSS"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -655,7 +637,7 @@
           data-desc="Aprendendo hooks, componentes funcionais, integração com APIs e gerenciamento de estado."
         >
           <img
-            src="images/react-icon.svg"
+            src="images/Icons/react-icon.svg"
             alt="React"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -675,7 +657,7 @@
           data-desc="Otimização para mecanismos de busca, SEO técnico, SEO on-page e estratégias de marketing digital."
         >
           <img
-            src="images/seo-icon.svg"
+            src="images/Icons/seo-icon.svg"
             alt="SEO"
             class="w-12 h-12 mb-2 group-hover:scale-110 transition"
           />
@@ -752,7 +734,7 @@
             class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
           >
             <img
-              src="images/portfolio.png"
+              src="images/projetos/portfolio.png"
               alt="Portfólio Pessoal"
               class="w-full h-full object-cover rounded-lg opacity-70"
             />
@@ -786,7 +768,7 @@
             class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
           >
             <img
-              src="images/project-store.svg"
+              src="images/projetos/project-store.svg"
               alt="Sistema de Gerenciamento de Loja"
               class="w-16 h-16 opacity-70"
             />
@@ -818,7 +800,7 @@
             class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
           >
             <img
-              src="images/project-portfolio.svg"
+              src="images/projetos/project-portfolio.svg"
               alt="Portfólio Pessoal"
               class="w-16 h-16 opacity-70"
             />
@@ -850,7 +832,7 @@
             class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
           >
             <img
-              src="/images/projeto_landing.png"
+              src="images/projetos/projeto_landing.png"
               alt="Landing Page"
               class="w-full h-full object-cover rounded-lg opacity-70"
             />
@@ -915,7 +897,7 @@
           class="flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg shadow-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-300"
           aria-label="Chamar no WhatsApp"
         >
-          <img src="images/whatsapp-icon.svg" alt="WhatsApp" class="w-8 h-8" />
+          <img src="images/Icons/whatsapp-icon.svg" alt="WhatsApp" class="w-8 h-8" />
           Conversar no WhatsApp
         </a>
         <p class="mt-6 text-neutral-50 dark:text-gray-500 text-center text-sm">

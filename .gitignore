@@ -1,6 +1,4 @@
-node_modules/
-*.log
+css/
+prettier.config.*
+tailwind.config.*
 src/
-css/styles.css
-assets/
-tailwind.config.js

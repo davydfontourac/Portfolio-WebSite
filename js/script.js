@@ -337,7 +337,7 @@ function setupFormacaoDots() {
     });
   });
 
-  // Adiciona rolagem automática a cada 5 segundos, se o mouse não estiver sobre o container
+  // Adiciona rolagem automática a cada 5 segundos, se o mouse não estiver sobre o container e a seção estiver visível
   let currentGroupIndex = 0;
   let isMouseOver = false;
 
@@ -349,13 +349,36 @@ function setupFormacaoDots() {
     isMouseOver = false;
   });
 
-  setInterval(() => {
-    if (!isMouseOver) {
-      currentGroupIndex = (currentGroupIndex + 1) % groups.length;
-      const firstItem = groups[currentGroupIndex][0];
-      firstItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    }
-  }, 5000);
+  const formacaoSection = document.getElementById('formacao');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        startAutoScroll();
+      } else {
+        stopAutoScroll();
+      }
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(formacaoSection);
+
+  let autoScrollInterval;
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (!isMouseOver) {
+        currentGroupIndex = (currentGroupIndex + 1) % groups.length;
+        const firstItem = groups[currentGroupIndex][0];
+        firstItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }, 5000);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', setupFormacaoDots);

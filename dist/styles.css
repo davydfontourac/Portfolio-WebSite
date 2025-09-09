@@ -1413,7 +1413,6 @@ body {
 }
 html.dark body {
   background: #181824 !important;
-  color: #f9f7f5;
 }
 ::selection {
   background: #38bdf8;

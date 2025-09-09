@@ -280,3 +280,82 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection);
   }
 });
+
+// Indicador de progresso (dots) para o formacao-container
+function setupFormacaoDots() {
+  const container = document.getElementById('formacao-container');
+  const dotsContainer = document.getElementById('formacao-dots');
+
+  if (!container || !dotsContainer) return;
+
+  const items = container.querySelectorAll('.snap-center');
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  const groupSize = isMobile ? 1 : 3; // Define o tamanho do grupo com base no dispositivo
+
+  const groups = [];
+  for (let i = 0; i < items.length; i += groupSize) {
+    groups.push(Array.from(items).slice(i, i + groupSize));
+  }
+
+  groups.forEach((group, index) => {
+    const dot = document.createElement('button');
+    dot.className = 'w-3 h-3 rounded-full bg-gray-400';
+    if (index === 0) dot.classList.add('bg-gray-800'); // Primeiro dot ativo
+
+    dot.addEventListener('click', () => {
+      const firstItem = group[0];
+      firstItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
+  container.addEventListener('scroll', () => {
+    const scrollLeft = container.scrollLeft;
+    const containerWidth = container.offsetWidth;
+
+    groups.forEach((group, index) => {
+      const firstItem = group[0];
+      const lastItem = group[group.length - 1];
+
+      const groupStart = firstItem.offsetLeft - container.offsetLeft;
+      const groupEnd = lastItem.offsetLeft + lastItem.offsetWidth - container.offsetLeft;
+
+      const dot = dotsContainer.children[index];
+      if (
+        scrollLeft + containerWidth / 2 >= groupStart &&
+        scrollLeft + containerWidth / 2 < groupEnd
+      ) {
+        // Ativa o dot correspondente
+        dot.classList.add('bg-gray-800');
+        dot.classList.remove('bg-gray-400');
+      } else {
+        // Desativa os outros dots
+        dot.classList.add('bg-gray-400');
+        dot.classList.remove('bg-gray-800');
+      }
+    });
+  });
+
+  // Adiciona rolagem automática a cada 5 segundos, se o mouse não estiver sobre o container
+  let currentGroupIndex = 0;
+  let isMouseOver = false;
+
+  container.addEventListener('mouseenter', () => {
+    isMouseOver = true;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    isMouseOver = false;
+  });
+
+  setInterval(() => {
+    if (!isMouseOver) {
+      currentGroupIndex = (currentGroupIndex + 1) % groups.length;
+      const firstItem = groups[currentGroupIndex][0];
+      firstItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }, 5000);
+}
+
+document.addEventListener('DOMContentLoaded', setupFormacaoDots);

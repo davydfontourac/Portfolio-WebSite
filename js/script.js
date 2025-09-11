@@ -204,43 +204,99 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 document.addEventListener('DOMContentLoaded', function () {
+  // Estrelas animadas caindo
+  const canvas = document.getElementById('stars-bg');
+  let stars = [];
+  let animationId;
+
+  function resizeCanvas() {
+    if (!canvas) return;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function createStars(count) {
+    stars = [];
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.2 + 0.2,
+        speed: Math.random() * 0.7 + 0.3,
+        alpha: Math.random() * 0.7 + 0.2,
+      });
+    }
+  }
+
   function drawStars() {
-    const canvas = document.getElementById('stars-bg');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
-    ctx.clearRect(0, 0, w, h);
-    for (let i = 0; i < 120; i++) {
-      const x = Math.random() * w;
-      const y = Math.random() * h;
-      const r = Math.random() * 1.2 + 0.2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let star of stars) {
       ctx.beginPath();
-      ctx.arc(x, y, r, 0, 2 * Math.PI);
-      ctx.fillStyle = 'rgba(255,255,255,' + (Math.random() * 0.7 + 0.2) + ')';
+      ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+      ctx.fillStyle = `rgba(255,255,255,${star.alpha})`;
       ctx.fill();
     }
   }
-  // Só desenha se estiver no dark
+
+  function animateStars() {
+    for (let star of stars) {
+      star.y += star.speed;
+      if (star.y > canvas.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas.width;
+        star.radius = Math.random() * 1.2 + 0.2;
+        star.speed = Math.random() * 0.7 + 0.3;
+        star.alpha = Math.random() * 0.7 + 0.2;
+      }
+    }
+    drawStars();
+    animationId = requestAnimationFrame(animateStars);
+  }
+
+  function startStars() {
+    resizeCanvas();
+    createStars(120);
+    drawStars();
+    cancelAnimationFrame(animationId);
+    animateStars();
+  }
+
+  function stopStars() {
+    cancelAnimationFrame(animationId);
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
   function handleBg() {
     const isDark = document.documentElement.classList.contains('dark');
     const bg = document.getElementById('dark-bg-animated');
     if (bg) bg.style.opacity = isDark ? '1' : '0';
-    if (isDark) drawStars();
+    if (isDark) {
+      startStars();
+    } else {
+      stopStars();
+    }
   }
+
   window.addEventListener('resize', () => {
-    if (document.documentElement.classList.contains('dark')) drawStars();
+    if (document.documentElement.classList.contains('dark')) {
+      startStars();
+    } else {
+      stopStars();
+    }
   });
-  // Detecta troca de tema
+
   const darkBtn = document.getElementById('toggle-dark');
   if (darkBtn) {
     darkBtn.addEventListener('click', () => {
       setTimeout(handleBg, 10);
     });
   }
-  // Inicializa
+
   handleBg();
 });
 

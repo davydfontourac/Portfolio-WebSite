@@ -1,4 +1,11 @@
-/* Tabs modernas para skills */
+.skill-card {
+  transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.skill-card.scale-105 {
+  transform: scale(1.07);
+  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.18);
+}
 .skills-tabs-container {
   display: flex;
   flex-direction: column;
@@ -109,4 +116,56 @@
   100% {
     background-position: 100% 0;
   }
+}
+.skill-card {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-card.scale-105 {
+  z-index: 10;
+  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.18);
+}
+.skills-panel > div {
+  overflow: visible !important;
+}
+
+.skill-card {
+  max-height: 200px; /* altura normal */
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.skill-card.open {
+  max-height: 500px; /* altura expandida */
+  border-color: #22d3ee; /* cor de destaque opcional */
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+}
+
+.skill-card .skill-bar {
+  width: 0; /* começa vazia */
+  transition: width 1s ease;
+}
+
+.skill-level {
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.5s ease;
+}
+
+.skill-card.open .skill-level {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s; /* aparece depois da barra */
+}
+
+.skill-bar {
+  width: 0;
+  opacity: 0; /* invisível inicialmente */
+  transition: width 1s ease, opacity 0.4s ease;
+}
+
+.skill-card.open .skill-bar {
+  opacity: 1; /* fica visível só quando o card abre */
+  /* largura definida via JS (data-skill) */
 }

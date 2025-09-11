@@ -93,25 +93,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Animação das barras de habilidades
-document.addEventListener('DOMContentLoaded', () => {
-  const skillBars = document.querySelectorAll('.skill-bar');
-  if (skillBars.length) {
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const bar = entry.target;
-            const percent = bar.getAttribute('data-skill');
-            bar.style.width = percent + '%';
-            observer.unobserve(bar);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    skillBars.forEach((bar) => observer.observe(bar));
-  }
+document.querySelectorAll('.skill-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    // Fecha todos os cards
+    document.querySelectorAll('.skill-card').forEach((c) => {
+      c.classList.remove('open');
+      c.querySelectorAll('.skill-bar').forEach((bar) => {
+        bar.style.width = '0'; // reseta as barras fechadas
+      });
+    });
+
+    // Abre só o clicado
+    card.classList.add('open');
+
+    // Anima a barra dentro do card aberto
+    card.querySelectorAll('.skill-bar').forEach((bar) => {
+      const skillValue = bar.getAttribute('data-skill');
+      bar.style.width = skillValue + '%';
+    });
+  });
 });
 
 // Animação de surgir nas seções ao rolar

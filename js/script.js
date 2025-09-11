@@ -208,6 +208,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.getElementById('stars-bg');
   let stars = [];
   let animationId;
+  let fastStarsTimeout = null;
+  let fastStarsActive = false;
+
+  // Velocidade padrão e acelerada
+  const STAR_SPEED_NORMAL = { min: 0.3, max: 0.7 };
+  const STAR_SPEED_FAST = { min: 1.2, max: 2.2 };
+  let currentSpeed = STAR_SPEED_NORMAL;
 
   function resizeCanvas() {
     if (!canvas) return;
@@ -222,10 +229,17 @@ document.addEventListener('DOMContentLoaded', function () {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: Math.random() * 1.2 + 0.2,
-        speed: Math.random() * 0.7 + 0.3,
+        speed: Math.random() * (currentSpeed.max - currentSpeed.min) + currentSpeed.min,
         alpha: Math.random() * 0.7 + 0.2,
       });
     }
+  }
+
+  function updateStarsSpeed(speedObj) {
+    currentSpeed = speedObj;
+    stars.forEach((star) => {
+      star.speed = Math.random() * (currentSpeed.max - currentSpeed.min) + currentSpeed.min;
+    });
   }
 
   function drawStars() {
@@ -247,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
         star.y = 0;
         star.x = Math.random() * canvas.width;
         star.radius = Math.random() * 1.2 + 0.2;
-        star.speed = Math.random() * 0.7 + 0.3;
+        star.speed = Math.random() * (currentSpeed.max - currentSpeed.min) + currentSpeed.min;
         star.alpha = Math.random() * 0.7 + 0.2;
       }
     }
@@ -281,6 +295,23 @@ document.addEventListener('DOMContentLoaded', function () {
       stopStars();
     }
   }
+
+  // Função para acelerar as estrelas (momentâneo)
+  function accelerateStars() {
+    if (!canvas || !stars.length) return;
+    updateStarsSpeed(STAR_SPEED_FAST);
+    if (fastStarsTimeout) clearTimeout(fastStarsTimeout);
+    fastStarsTimeout = setTimeout(() => {
+      updateStarsSpeed(STAR_SPEED_NORMAL);
+    }, 1000); // aceleração rápida e curta
+  }
+
+  // Adiciona evento nos links do nav (apenas uma vez)
+  setTimeout(() => {
+    document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', accelerateStars);
+    });
+  }, 100);
 
   window.addEventListener('resize', () => {
     if (document.documentElement.classList.contains('dark')) {

@@ -425,15 +425,23 @@ function setupFormacaoDots() {
   });
 
   // Adiciona rolagem automática a cada 5 segundos, se o mouse não estiver sobre o container e a seção estiver visível
+
   let currentGroupIndex = 0;
   let isMouseOver = false;
+  let isTouching = false;
 
   container.addEventListener('mouseenter', () => {
     isMouseOver = true;
   });
-
   container.addEventListener('mouseleave', () => {
     isMouseOver = false;
+  });
+  // Pausa auto-scroll no mobile ao tocar
+  container.addEventListener('touchstart', () => {
+    isTouching = true;
+  });
+  container.addEventListener('touchend', () => {
+    isTouching = false;
   });
 
   const formacaoSection = document.getElementById('formacao');
@@ -455,7 +463,7 @@ function setupFormacaoDots() {
 
   function startAutoScroll() {
     autoScrollInterval = setInterval(() => {
-      if (!isMouseOver) {
+      if (!isMouseOver && !isTouching) {
         currentGroupIndex = (currentGroupIndex + 1) % groups.length;
         const firstItem = groups[currentGroupIndex][0];
         firstItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });

@@ -16,6 +16,7 @@
     <title>Davyd Fontoura | Portfólio</title>
     <link rel="stylesheet" href="dist/styles.css" />
     <link rel="stylesheet" href="dist/skills-tabs.css" />
+    <link rel="stylesheet" href="dist/projetos-tabs.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
@@ -879,6 +880,7 @@
     </section>
 
     <!-- Projetos -->
+
     <section
       id="projetos"
       class="min-h-screen flex flex-col justify-center max-w-5xl mx-auto px-4 py-12 snap-start opacity-0 translate-y-8 transition-all duration-700 py-32"
@@ -887,155 +889,173 @@
         class="text-3xl font-bold mb-8 text-center shine-text"
         style="display: inline-block; width: auto"
       >
-        Projetos em Destaque
+        Projetos
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex-1">
-        <!-- Projeto 1 -->
-        <div
-          class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
-        >
-          <div
-            class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
-          >
-            <img
-              src="images/projetos/mocup-desktop-mobile.svg"
-              alt="Portfólio Pessoal"
-              class="w-full h-full object-cover rounded-lg opacity-70"
-            />
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
-            Portfólio Pessoal
-          </h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-2">
-            Este próprio site, feito com HTML, Tailwind CSS e JavaScript, com foco em design
-            responsivo e animações suaves.
-          </p>
-          <span
-            class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
-            >Ainda em desenvolvimento</span
-          >
-          <div class="flex gap-2 mt-auto">
-            <a
-              href="https://davydportfoliowebsite.vercel.app/"
-              class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm"
-              target="_blank"
-              rel="noopener"
-              >Ver repositório</a
+      <!-- Tabs Projetos -->
+      <div class="projetos-tabs flex justify-center gap-4 mb-8">
+        <button class="projetos-tab active" data-tab="pessoais" type="button">
+          Projetos Pessoais
+        </button>
+        <button class="projetos-tab" data-tab="freelas" type="button">Freelas</button>
+      </div>
+      <div class="projetos-content">
+        <!-- Painel Projetos Pessoais -->
+        <div class="projetos-panel" data-panel="pessoais">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex-1">
+            <!-- Projeto 1 -->
+            <div
+              class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
             >
+              <div
+                class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
+              >
+                <img
+                  src="images/projetos/mocup-desktop-mobile.svg"
+                  alt="Portfólio Pessoal"
+                  class="w-full h-full object-cover rounded-lg opacity-70"
+                />
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
+                Portfólio Pessoal
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-2">
+                Este próprio site, feito com HTML, Tailwind CSS e JavaScript, com foco em design
+                responsivo e animações suaves.
+              </p>
+              <span
+                class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
+                >Ainda em desenvolvimento</span
+              >
+              <div class="flex gap-2 mt-auto">
+                <a
+                  href="https://davydportfoliowebsite.vercel.app/"
+                  class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm"
+                  target="_blank"
+                  rel="noopener"
+                  >Ver repositório</a
+                >
+              </div>
+            </div>
+            <!-- Projeto 2 -->
+            <div
+              class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  height: 150px;
+                  background: linear-gradient(90deg, #c2f0fc, #e6f9d7);
+                  border-radius: 12px;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                "
+              >
+                <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" stroke="#4F46E5" stroke-width="4" />
+                  <path d="M24 16v8l6 4" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
+                Sistema de Gerenciamento de Loja
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-2">
+                Projeto Java com classes como Loja, Produto, Endereço e Data, implementando lógica
+                de negócio e validações básicas.
+              </p>
+              <span
+                class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
+                >Ainda em desenvolvimento</span
+              >
+              <div class="flex gap-2 mt-auto">
+                <a
+                  href="#"
+                  class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60"
+                  >Ver repositório</a
+                >
+              </div>
+            </div>
+            <!-- Projeto 3 -->
+            <div
+              class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  height: 150px;
+                  background: linear-gradient(90deg, #c2f0fc, #e6f9d7);
+                  border-radius: 12px;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                "
+              >
+                <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" stroke="#4F46E5" stroke-width="4" />
+                  <path d="M24 16v8l6 4" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
+                Loja Online
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-2">
+                Projeto ecommerce, com banco de dados Mysql e linguagem c#, com a função de cadastro
+                de clientes, cadastro de produtos entre outras coisas.
+              </p>
+              <span
+                class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
+                >Ainda em desenvolvimento</span
+              >
+              <div class="flex gap-2 mt-auto">
+                <a
+                  href="#"
+                  class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60"
+                  >Ver repositório</a
+                >
+              </div>
+            </div>
+            <!-- Novo Projeto: Landing Page -->
+            <div
+              class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
+            >
+              <div
+                class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
+              >
+                <img
+                  src="images/projetos/projeto_landing.png"
+                  alt="Landing Page"
+                  class="w-full h-full object-cover rounded-lg opacity-70"
+                />
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
+                Landing Page
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-2">
+                Projeto de landing page responsiva, desenvolvido em HTML, CSS e JavaScript, focado
+                em conversão e design moderno.
+              </p>
+              <span
+                class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
+                >Ainda em desenvolvimento</span
+              >
+              <div class="flex gap-2 mt-auto">
+                <a
+                  href="https://davydfontourac.github.io/projeto-landing-page/"
+                  class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm"
+                  target="_blank"
+                  rel="noopener"
+                  >Ver repositório</a
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <!-- Projeto 2 -->
-        <div
-          class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 150px;
-              background: linear-gradient(90deg, #c2f0fc, #e6f9d7);
-              border-radius: 12px;
-              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            "
-          >
-            <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="22" stroke="#4F46E5" stroke-width="4" />
-              <path d="M24 16v8l6 4" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
-            Sistema de Gerenciamento de Loja
-          </h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-2">
-            Projeto Java com classes como Loja, Produto, Endereço e Data, implementando lógica de
-            negócio e validações básicas.
-          </p>
-          <span
-            class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
-            >Ainda em desenvolvimento</span
-          >
-          <div class="flex gap-2 mt-auto">
-            <a
-              href="#"
-              class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60"
-              >Ver repositório</a
-            >
-          </div>
-        </div>
-        <!-- Projeto 3 -->
-        <div
-          class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 150px;
-              background: linear-gradient(90deg, #c2f0fc, #e6f9d7);
-              border-radius: 12px;
-              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            "
-          >
-            <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="22" stroke="#4F46E5" stroke-width="4" />
-              <path d="M24 16v8l6 4" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
-            Loja Online
-          </h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-2">
-            Projeto ecommerce, com banco de dados Mysql e linguagem c#, com a função de cadastro de
-            clientes, cadastro de produtos entre outras coisas.
-          </p>
-          <span
-            class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
-            >Ainda em desenvolvimento</span
-          >
-          <div class="flex gap-2 mt-auto">
-            <a
-              href="#"
-              class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm pointer-events-none opacity-60"
-              >Ver repositório</a
-            >
-          </div>
-        </div>
-        <!-- Novo Projeto: Landing Page -->
-        <div
-          class="bg-white dark:bg-zinc-900 border border-transparent hover:border-cyan-400 hover:dark:border-emerald-300 dark:border-zinc-800 p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col duration-300"
-        >
-          <div
-            class="h-40 bg-gradient-to-r from-cyan-200 via-emerald-100 to-yellow-100 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-800 rounded-lg mb-4 flex items-center justify-center"
-          >
-            <img
-              src="images/projetos/projeto_landing.png"
-              alt="Landing Page"
-              class="w-full h-full object-cover rounded-lg opacity-70"
-            />
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-cyan-700 dark:text-emerald-300">
-            Landing Page
-          </h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-2">
-            Projeto de landing page responsiva, desenvolvido em HTML, CSS e JavaScript, focado em
-            conversão e design moderno.
-          </p>
-          <span
-            class="inline-block bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-semibold px-3 py-1 rounded-full mb-2"
-            >Ainda em desenvolvimento</span
-          >
-          <div class="flex gap-2 mt-auto">
-            <a
-              href="https://davydfontourac.github.io/projeto-landing-page/"
-              class="text-cyan-600 dark:text-emerald-300 hover:underline text-sm"
-              target="_blank"
-              rel="noopener"
-              >Ver repositório</a
-            >
+        <!-- Painel Freelas -->
+        <div class="projetos-panel hidden" data-panel="freelas">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex-1">
+            <!-- Adicione seus projetos de freela aqui -->
           </div>
         </div>
       </div>
@@ -1089,6 +1109,7 @@
       © 2025 Davyd Fontoura. Todos os direitos reservados.
     </footer>
     <script src="js/tabs-skill.js" defer></script>
+    <script src="js/tabs-projetos.js" defer></script>
     <script src="js/script.js" defer></script>
   </body>
 </html>

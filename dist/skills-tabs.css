@@ -20,7 +20,7 @@
   color: var(--color-gray-700, #374151);
   border: none;
   padding: 0.75rem 2rem;
-  border-radius: 2rem;
+  border-radius: 1rem 1rem 0 0;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -167,5 +167,10 @@
 
 .skill-card.open .skill-bar {
   opacity: 1; /* fica visível só quando o card abre */
-  /* largura definida via JS (data-skill) */
+}
+
+.skills-tab:hover {
+  background: #06b6d4;
+  color: #fff;
+  opacity: 1;
 }

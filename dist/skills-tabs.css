@@ -1,0 +1,112 @@
+/* Tabs modernas para skills */
+.skills-tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills-tabs {
+  display: flex;
+  gap: 1rem;
+}
+.skills-tab {
+  background: var(--color-gray-200, #f3f4f6);
+  color: var(--color-gray-700, #374151);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.skills-tab.active {
+  background: linear-gradient(
+    90deg,
+    var(--color-cyan-500, #06b6d4),
+    var(--color-emerald-500, #10b981)
+  );
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.12);
+}
+.skills-panel {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+.skills-panel.hidden {
+  display: none;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsivo */
+
+@media (max-width: 600px) {
+  .skills-tabs {
+    gap: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .skills-tab {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .skills-panel > div {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem !important;
+    overflow-x: visible !important;
+  }
+  .skill-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Efeito Shine para texto */
+
+.shine-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #fffbe6 0%,
+    #ffd700 20%,
+    #fffbe6 40%,
+    #fffbe6 60%,
+    #ffd700 80%,
+    #fffbe6 100%
+  );
+  background-size: 200% auto;
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: shine-move-gold 2.5s linear infinite;
+}
+
+@-webkit-keyframes shine-move-gold {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes shine-move-gold {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}

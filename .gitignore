@@ -1,4 +1,6 @@
-css/
 prettier.config.*
 tailwind.config.*
-src/
+package-lock.json
+package.json
+postcss.config.*
+node_modules/

@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+@import '../dist/main.css';
+@import '../dist/skills-tabs.css';
+@import '../dist/projetos-tabs.css';

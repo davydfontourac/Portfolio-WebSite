@@ -1654,6 +1654,16 @@ header .profile-home-img {
     font-size: 0.95rem;
   }
 }
+
+.ads {
+  color: #fff; 
+}
+
+html.dark .ads {
+  color: var(--color-cyan-600); 
+}
+
+
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

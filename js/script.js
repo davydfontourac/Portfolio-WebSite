@@ -165,8 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     // Carrega preferência ao abrir
-    if (localStorage.getItem('theme') === 'dark') {
+    const themePref = localStorage.getItem('theme');
+    if (themePref === 'dark') {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }
 });

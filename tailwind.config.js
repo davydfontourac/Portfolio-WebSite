@@ -1,15 +1,6 @@
 module.exports = {
-  darkMode: 'class',
-  theme: {
-    extend: {
-      colors: {
-        primary: '#1e1e1e',
-        secondary: '#f9f7f5'
-      },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif']
-      }
-    }
-  },
+  darkMode: 'media',
+  content: ['./index.html', './src/**/*.{js,html}'],
+  theme: { extend: {} },
   plugins: [],
-}
+};

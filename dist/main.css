@@ -1,6 +1,6 @@
-
 @import tailwindcss;
-html, body {
+html,
+body {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
@@ -10,6 +10,7 @@ html, body {
 }
 body {
   font-family: 'Inter', sans-serif;
+  background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
   color: #1e1e1e;
 }
 html.dark body {
@@ -55,7 +56,8 @@ html.dark body {
 #formacao-container::-webkit-scrollbar {
   display: none;
 }
-#scroll-left, #scroll-right {
+#scroll-left,
+#scroll-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -103,7 +105,8 @@ html.dark body {
   border-radius: 0.5rem;
   background: #222;
 }
-header h1, header h2 {
+header h1,
+header h2 {
   font-family: 'Montserrat', 'Montserrat Bold', Arial, sans-serif !important;
   font-weight: 700 !important;
   text-transform: uppercase;
@@ -159,7 +162,6 @@ header .profile-home-img {
     height: 256px;
   }
 }
-
 
 #formacao-dots button {
   width: 12px;
